@@ -93,7 +93,6 @@ export default function Route() {
 
   const isOwner = userSession?.id === note.userId;
 
-  // TODO: Can have custom background cover like on dev.to
   return (
     <Layout
       isSpaced

@@ -16,6 +16,7 @@ export default function Route() {
         <h1>
           <Balancer>Tentang Kawal Masjid</Balancer>
         </h1>
+        <img src="/assets/opengraph/kawalmasjid-og.png" alt="Kawal Masjid" />
         <p>Website ini masih dalam pengembangan.</p>
       </article>
     </Layout>

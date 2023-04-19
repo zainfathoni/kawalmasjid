@@ -2,7 +2,7 @@ import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import { AvatarAuto, Layout, RemixLink } from "~/components";
+import { AvatarAuto, Layout, RemixLink, Image } from "~/components";
 import { model } from "~/models";
 import { createCacheHeaders, createSitemap, formatRelativeTime } from "~/utils";
 
@@ -18,16 +18,24 @@ export default function Route() {
   const { places } = useLoaderData<typeof loader>();
   return (
     <Layout>
-      <section className="mx-auto flex max-w-max flex-wrap items-center justify-center gap-4 py-10 lg:justify-between lg:py-20">
+      <section className="mx-auto flex max-w-max flex-wrap items-center justify-center gap-4 py-5 lg:justify-between">
         <div className="max-w-lg space-y-4">
-          <div className="prose-config">
-            <h1 className="text-xl">
-              <span>Kawal Masjid</span>
+          <div className="stack-center">
+            <Image
+              src="/assets/opengraph/kawalmasjid-avatar.png"
+              alt="Kawal Masjid"
+              width={250}
+              height={250}
+              className="rounded-lg w-60 h-60"
+            />
+            <h1 className="text-5xl">
+              Kawal Masjid
             </h1>
             <p>Website ini masih dalam pengembangan.</p>
           </div>
         </div>
       </section>
+
       <section>
         <ul className="space-y-2">
           {places.map((place) => {

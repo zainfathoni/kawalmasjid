@@ -9,7 +9,7 @@ export const query = {
   },
   getAll() {
     return prisma.place.findMany({
-      where: { isPublished: true },
+      // FIXME: where: { isPublished: true },
       include: { user: { select: model.user.fields.public } },
       orderBy: { updatedAt: "desc" },
     });

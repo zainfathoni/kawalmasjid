@@ -16,6 +16,7 @@ import { prisma } from "~/libs";
 async function seed() {
   await seedUsers();
   await seedNotes();
+  await seedPlaces();
 }
 
 /**

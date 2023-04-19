@@ -26,11 +26,9 @@ export default function Route() {
               alt="Kawal Masjid"
               width={250}
               height={250}
-              className="rounded-lg w-60 h-60"
+              className="h-60 w-60 rounded-lg"
             />
-            <h1 className="text-5xl">
-              Kawal Masjid
-            </h1>
+            <h1 className="text-5xl">Kawal Masjid</h1>
             <p>Website ini masih dalam pengembangan.</p>
           </div>
         </div>

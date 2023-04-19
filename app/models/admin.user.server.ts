@@ -12,8 +12,9 @@ export const query = {
     return prisma.user.findMany({
       include: {
         role: { select: { symbol: true, name: true, description: true } },
-        notes: { select: { id: true } },
+        places: { select: { id: true } },
       },
+      orderBy: [{ role: { sequence: "asc" } }, { name: "asc" }],
     });
   },
   getById({ id }: Pick<User, "id">) {

@@ -42,21 +42,21 @@ export const configAdmin = {
       name: "Notes",
       icon: "notes",
       items: [
-        {
-          to: "note-statuses",
-          name: "Note Statuses",
-          icon: "noteStatus",
-        },
-        {
-          to: "note-categories",
-          name: "Note Categories",
-          icon: "noteCategory",
-        },
-        {
-          to: "note-tags",
-          name: "Note Tags",
-          icon: "noteTag",
-        },
+        // {
+        //   to: "note-statuses",
+        //   name: "Note Statuses",
+        //   icon: "noteStatus",
+        // },
+        // {
+        //   to: "note-categories",
+        //   name: "Note Categories",
+        //   icon: "noteCategory",
+        // },
+        // {
+        //   to: "note-tags",
+        //   name: "Note Tags",
+        //   icon: "noteTag",
+        // },
       ],
     },
 

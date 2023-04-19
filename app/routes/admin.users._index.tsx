@@ -31,7 +31,7 @@ export default function Route() {
 
       <ul className="space-y-2">
         {users.map((user) => {
-          const userNotesCount = user.notes?.length;
+          const userPlacesCount = user.places?.length;
           return (
             <li key={user.id}>
               <RemixLink
@@ -47,9 +47,11 @@ export default function Route() {
                     <span>{user.email}</span>
                     <Badge>{user.role.name}</Badge>
                   </h5>
-                  <p>
-                    {userNotesCount} {pluralize("note", userNotesCount)}
-                  </p>
+                  {userPlacesCount >= 0 && (
+                    <p>
+                      {userPlacesCount} {pluralize("place", userPlacesCount)}
+                    </p>
+                  )}
                 </div>
               </RemixLink>
             </li>

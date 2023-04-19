@@ -142,7 +142,11 @@ export function HeaderMainButtons() {
             <ButtonLink to="/login" variant="ghost">
               Login
             </ButtonLink>
-            <ButtonLink to="/register" variant="subtle" className="hidden sm:flex">
+            <ButtonLink
+              to="/register"
+              variant="subtle"
+              className="hidden sm:flex"
+            >
               Registrasi
             </ButtonLink>
           </>

@@ -1,4 +1,4 @@
-import { Balancer, Layout } from "~/components";
+import { Balancer, Layout, Image } from "~/components";
 import { createMetaData, createSitemap } from "~/utils";
 
 export const meta = createMetaData({
@@ -16,7 +16,7 @@ export default function Route() {
         <h1>
           <Balancer>Tentang Kawal Masjid</Balancer>
         </h1>
-        <img src="/assets/opengraph/kawalmasjid-og.png" alt="Kawal Masjid" />
+        <Image src="/assets/opengraph/kawalmasjid-og.png" alt="Kawal Masjid" />
         <p>Website ini masih dalam pengembangan.</p>
       </article>
     </Layout>

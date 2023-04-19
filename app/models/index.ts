@@ -1,6 +1,7 @@
 import * as adminNote from "./admin.note.server";
 import * as admin from "./admin.server";
 import * as adminUser from "./admin.user.server";
+import * as adminPlace from "./admin.place.server";
 import * as note from "./note.server";
 import * as place from "./place.server";
 import * as userNotification from "./user-notification.server";
@@ -15,6 +16,7 @@ export const model = {
   admin,
   adminNote,
   adminUser,
+  adminPlace,
   note,
   place,
   user,

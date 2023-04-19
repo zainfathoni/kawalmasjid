@@ -31,6 +31,13 @@ export const configAdmin = {
     },
 
     {
+      to: "places",
+      name: "Places",
+      icon: "places",
+      items: [],
+    },
+
+    {
       to: "notes",
       name: "Notes",
       icon: "notes",

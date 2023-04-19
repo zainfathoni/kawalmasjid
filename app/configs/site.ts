@@ -38,7 +38,7 @@ export const configSite = {
     { to: "/about", name: "About", icon: "about" },
     { to: "/components", name: "Components", icon: "components" },
     { to: "/demo", name: "Demo", icon: "demo" },
-    { to: "/notes", name: "Notes", icon: "notes" },
+    { to: "/places", name: "Places", icon: "places" },
   ],
 };
 

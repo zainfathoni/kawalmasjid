@@ -190,6 +190,7 @@ model Place {
   name        String
   description String  @db.Text
   mapsUrl     String?
+  address     String?
 
   isVerified   Boolean   @default(false)
   verifiedAt   DateTime?

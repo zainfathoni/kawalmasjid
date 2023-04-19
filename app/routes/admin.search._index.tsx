@@ -25,21 +25,21 @@ export const handle = createSitemap();
 export async function loader({ request }: LoaderArgs) {
   const { q } = getAllSearchQuery({ request });
 
-  const [notes, users] = await prisma.$transaction([
-    model.note.query.search({ q }),
+  const [places, users] = await prisma.$transaction([
+    model.place.query.search({ q }),
     model.user.query.search({ q }),
   ]);
 
-  const itemsCount = notes.length + users.length;
+  const itemsCount = places.length + users.length;
 
   return json(
-    { q, notes, users, itemsCount },
+    { q, places, users, itemsCount },
     { headers: createCacheHeaders(request) }
   );
 }
 
 export default function Route() {
-  const { q, notes, users, itemsCount } = useLoaderData<typeof loader>();
+  const { q, places, users, itemsCount } = useLoaderData<typeof loader>();
 
   return (
     <div>
@@ -77,20 +77,21 @@ export default function Route() {
           </div>
         )}
 
-        {notes.length > 0 && (
+        {places.length > 0 && (
           <div className="space-y-2">
-            <h4>Notes</h4>
+            <h4>Places</h4>
             <ul className="space-y-1">
-              {notes.map((note) => {
+              {places.map((place) => {
                 return (
-                  <li key={note.id}>
+                  <li key={place.id}>
                     <RemixLink
                       prefetch="intent"
-                      to={`/admin/notes/${note.id}`}
+                      to={`/admin/places/${place.id}`}
                       className="card-sm hover:card-hover"
                     >
-                      <b>{note.title}</b> · {note.description} ·{" "}
-                      {truncateText(note.content, 50)}
+                      <b>{place.name}</b>
+                      <span> · </span>
+                      <span>{truncateText(place.description, 50)}</span>
                     </RemixLink>
                   </li>
                 );

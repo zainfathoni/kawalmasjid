@@ -33,8 +33,8 @@ import type { z } from "zod";
 
 export const meta: V2_MetaFunction = () => {
   return createMetaData({
-    title: "Register for Kawal Masjid",
-    description: "Create your new account to join the adventure.",
+    title: `Registrasi di ${configSite.name}`,
+    description: "Buat akun untuk memberikan informasi masjid.",
   });
 };
 
@@ -44,14 +44,13 @@ export async function loader({ request }: LoaderArgs) {
   });
 
   const headerHeadingText = getRandomText([
-    `Join ${configSite.name}`,
-    `Create your ${configSite.name} account`,
+    `Bergabung di ${configSite.name}`,
+    `Registrasi di ${configSite.name}`,
   ]);
 
   const headerDescriptionText = getRandomText([
-    `Let's get started in ${configSite.name}`,
-    `Register your new account to get started`,
-    `Welcome to a web app starter kit that's based on Remix and Tailwind.`,
+    `Buat akun untuk memberi informasi masjid`,
+    `Registrasi untuk memulai`,
   ]);
 
   return json({
@@ -203,7 +202,7 @@ export default function Route() {
               loadingText="Creating account..."
               className="w-full"
             >
-              Join {configSite.name}
+              Bergabung ke {configSite.name}
             </ButtonLoading>
           </fieldset>
 
@@ -216,7 +215,7 @@ export default function Route() {
               <RemixLinkText
                 to={{ pathname: "/login", search: searchParams.toString() }}
               >
-                Have an account? Login
+                Punya akun? Login
               </RemixLinkText>
             </p>
           </div>

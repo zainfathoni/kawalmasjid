@@ -25,14 +25,9 @@ export function SiteFooter({ noThemeToggle }: Props) {
       <section className="contain flex flex-wrap items-end gap-4 sm:justify-between">
         <div className="space-y-4">
           <p className="opacity-80">
-            <span>Copyright &copy; </span>
+            <span>Hak Cipta &copy; </span>
             <span>{getCurrentYear()} </span>
-            <Anchor
-              href={configMeta?.author.url}
-              className="py-3 font-semibold sm:py-0"
-            >
-              {configMeta?.author.name}
-            </Anchor>
+            <span>{configMeta?.author.name}</span>
           </p>
         </div>
 

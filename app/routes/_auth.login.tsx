@@ -44,15 +44,14 @@ export async function loader({ request }: LoaderArgs) {
   });
 
   const headerHeadingText = getRandomText([
-    "Hello again!",
-    "Welcome back!",
-    "Glad to see you!",
+    "Halo!",
+    "Selamat datang kembali",
   ]);
 
   const headerDescriptionText = getRandomText([
-    `Continue to ${configSite.name}`,
-    `Continue with your ${configSite.name} account`,
-    `Use your ${configSite.name} account to continue`,
+    `Lanjut ke ${configSite.name}`,
+    `Lanjut dengan akun ${configSite.name}`,
+    `Gunakan akun ${configSite.name}`,
   ]);
 
   return json({
@@ -198,7 +197,7 @@ export default function Route() {
             <RemixLinkText
               to={{ pathname: "/register", search: searchParams.toString() }}
             >
-              New to {configSite.name}? Register for free
+              Baru di {configSite.name}? Registrasi
             </RemixLinkText>
           </p>
         </RemixForm>

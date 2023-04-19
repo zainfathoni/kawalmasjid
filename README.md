@@ -10,7 +10,7 @@
 ![Prisma ORM](https://img.shields.io/badge/Prisma_ORM-2D3748?style=flat-square&logo=prisma&logoColor=white)
 ![PlanetScale](https://img.shields.io/badge/PlanetScale-000000?style=flat-square&logo=planetscale&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-[![Better Uptime](https://betteruptime.com/status-badges/v1/monitor/enmd.svg)](https://uptime.kawalmasjid.com/?utm_source=status_badge)
+[![Better Uptime](https://betteruptime.com/status-badges/v1/monitor/enmd.svg)](https://status.kawalmasj.id/?utm_source=status_badge)
 
 ## Introduction
 
@@ -19,6 +19,8 @@
 Made with [⏪ Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
 
 ### Live
+
+> 🚧 This project is still in very early development
 
 Visit [kawalmasj.id](https://kawalmasj.id)
 
@@ -30,194 +32,6 @@ Follow the progress on:
 ## Tech Stack
 
 Listed here are only the most important parts in the stack.️ Some setup mostly finished, but some might haven't done yet or still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
-
-As a reminder:
-
-> "Software is a just a tool to help accomplish something for people - many programmers never understood that. Keep your eyes on the delivered value, and don’t over focus on the specifics of the tools" — John Carmack
-
-### Primary Tech Stack
-
-- Remix and Tailwind
-- TRIP: TypeScript/Tailwind Remix/React/Radix Interface Prisma
-  - VPS: Vercel PlanetScale
-
-These are also the primary prerequisites for you to learn, understand, and use with this Kawal Masjid stack. (Architecture diagram can help later on here)
-
-### Complete Tech Stack
-
-The complete stack includes TypeScript, Remix & Remix Auth, React, Tailwind CSS, Radix UI, Zod, Conform, Prisma ORM, PlanetScale, and Vercel. But this repo also attempt to learn from Next.js, tRPC, GraphQL, NestJS, Passport, Swagger (OpenAPI), and others as well.
-
-Legends:
-
-- 🧰 = required or should not be changed
-- 🧩 = optional or interchangeable
-- 🎉 = 3rd party service or platform
-- 🚧 = still not there yet or still in development
-
-Already setup in Kawal Masjid and some are for alternatives:
-
-- Core
-  - [Node.js](https://nodejs.org) 🧰
-    - [pnpm](https://pnpm.io) 🧩
-  - [TypeScript](https://typescriptlang.org) 🧰
-  - [React](https://react.dev) 🧰
-  - [Remix](https://remix.run) 🧰
-- Styling
-  - [Tailwind CSS](https://tailwindcss.com) 🧰
-  - [Fontsource](https://fontsource.org) 🧰
-  - [Radix UI](https://radix-ui.com) 🧰🧩
-  - [Headless UI](https://headlessui.dev) 🧰🧩
-  - [Ariakit](https://ariakit.org) 🧩
-  - [React Email](https://react.email) 🚧
-- Form Handling
-  - [Conform](https://conform.guide) 🧰
-- Data Validation
-  - [Zod](https://zod.dev) 🧰
-    - [Zodix](https://github.com/rileytomasek/zodix) 🧩
-    - [zod-form-data](https://npmjs.com/package/zod-form-data) 🧩
-- Database and ORM
-  - [Prisma ORM](https://prisma.io) 🧰
-  - [PlanetScale](https://planetscale.com) 🧩🎉
-- Auth
-  - [Remix Auth](https://github.com/sergiodxa/remix-auth) 🧰
-- Tooling
-  - [Prettier](https://prettier.io) 🧰
-  - [ESLint](https://eslint.org) 🧰
-  - [Stylelint](https://stylelint.io) 🧰
-  - Environment Variable/Secret
-    - [Doppler](https://doppler.com) 🧩🎉
-- Deployment
-  - [Vercel](https://vercel.com) 🧰🧩🎉
-- Cache/Ratelimit
-  - [Upstash](https://upstash.com) 🚧🧩🎉
-- Image
-  - [ImageKit](https://imagekit.io) 🚧🧩🎉
-  - [Uploadcare](https://uploadcare.com) 🚧🧩🎉
-- Email
-  - Template
-    - [React Email](https://react.email) 🚧🧩
-  - Transactional
-    - [Mailjet](https://mailjet.com) 🚧🧩🎉
-    - [Resend](https://resend.com) 🚧🧩🎉
-  - Marketing
-    - [ConvertKit](https://convertkit.com) 🚧🧩🎉
-- Testing 🚧
-  - [Vitest](https://vitest.dev) 🚧🧩
-  - [Testing Library](https://testing-library.com) 🚧🧩
-  - [MSW](https://msw.io) 🚧🧩
-  - [Playwright](https://playwright.dev) 🚧🧩
-  - [Ladle](https://ladle.dev) 🚧🧩
-
-[Check the GUIDE.md](./GUIDE.md) if you need some guide into the project setup, structure, and files.
-
-### Extra Tech Stack
-
-Although these are not included in Kawal Masjid, if there is a need for a separate backend/server/service, here are the recommendations:
-
-- Core/API
-  - REST
-    - [NestJS](https://nestjs.com)
-      - [Express](https://expressjs.com)
-      - [Fastify](https://fastify.io)
-    - [Pothos](https://github.com/hayes/pothos)
-  - GraphQL
-    - [GraphQL](https://graphql.org)
-    - [GraphQL Yoga](https://github.com/dotansimha/graphql-yoga)
-      - [Express](https://expressjs.com)
-    - [Pothos](https://github.com/hayes/pothos)
-  - tRPC
-    - [tRPC](https://trpc.io)
-- Database
-  - [Prisma ORM](https://prisma.io)
-- Auth
-  - [Passport](https://passportjs.org)
-- Misc
-  - [Inngest](https://inngest.com)
-- Deployment with PaaS
-  - [Railway](https://railway.app)
-  - [Fly.io](https://fly.io)
-  - [Render](https://render.com)
-- Deployment with IaaS
-  - [Google Cloud Platform](https://cloud.google.com)
-  - [Amazon Web Services](https://aws.amazon.com)
-
-## Some More Info
-
-### Some Roadmap or Checklists
-
-Included features for the users:
-
-- [x] Light and dark mode theme
-- [x] Site layout and routes/pages
-- [x] Admin dashboard
-- [x] Register, log in, log out
-  - [x] Data validation and check availability
-  - [ ] Send welcome or verification email
-- [x] Public pages and search
-- [x] User dashboard, profile, settings
-  - [x] Manage notes (create, read, update, delete, search)
-  - [x] Change profile and avatar image
-  - [x] Change email
-  - [x] Change and reset password
-  - [ ] Notification
-- [x] Admin dashboard and search
-  - [x] Manage users, notes, etc
-- [x] Various others
-  - [x] Add to home screen as app on mobile
-  - [x] Search data
-  - [ ] Image assets
-  - [ ] Map viewer
-
-Included setup for the developers:
-
-- [x] Full stack type safety with Remix and TypeScript
-  - [x] Follow the practices from the official docs and Remix Stacks
-  - [x] v2 future flags while still in v1
-    - [x] v2 flat routes
-    - [x] v2 error boundary
-    - [x] v2 meta data management
-    - [x] v2 route convention
-    - [x] v2 normalized form method
-    - [x] Tailwind CSS support
-    - [x] New dev server with config for HMR/HDR (hot module/data reload)
-- [x] More than 50 of ready to use and 100% customizable UI components, including layouts and demo examples
-  - [ ] Rich text or WYSIWYG editor with TipTap
-  - [ ] Keyboard shortcuts with cmdk
-- [x] Preselected styles, colors, fonts, icons, and responsive design
-  - [x] Customize in Tailwind Config, for brand (primary) and surface (secondary) colors
-  - [x] Default avatar image with Dicebear API
-  - [x] Icon set system to avoid name conflict
-    - [x] Lucide
-    - [x] Iconir
-    - [ ] Bring your own favorite
-- [x] Database with Prisma ORM and MySQL on PlanetScale
-  - [x] tRPC-style or GraphQL-style data models file structure
-- [x] Data validation with Zod for general and Zodix for Remix loader/action
-- [x] Form handling with Conform
-  - [x] Check for unallowed usernames
-  - [ ] Redirect to previous route
-  - [ ] Password strength meter
-- [x] Auth with Remix Auth using a session cookie
-- [ ] Image hosting integration
-- [ ] Email delivery system
-  - [ ] Transactional email with Mailjet and React Email
-  - [ ] Marketing email with ConvertKit
-- [x] SEO functions with meta tags, `robots.txt`, `sitemap.xml`, `canonical`
-- [x] Various utilities with external libraries
-  - [x] Root loader data for env, theme, user, etc
-  - [x] Cache header
-- [x] No need for CLS loading screens/skeletons, only loading bar on top and loading button state
-- [x] Lighthouse or [Pagespeed Insights](https://pagespeed.web.dev/analysis/https-rewinds-kawalmasjid-com/hbkn7kmahh?form_factor=desktop) optimized
-- [x] pnpm, Prettier, ESLint, Stylelint, and much more
-  - [x] No lint and type errors!
-  - [x] Organize import order
-
-Recommended extra setup:
-
-- Connect to monitoring service such as Better Uptime or Instatus.
-- Connect Vercel project to Axiom for better log management.
-- Connect to Highlight to report and analyze errors.
-- Use [Google Search Console](https://search.google.com/search-console/about) to check the sitemap and SERP-related stuffs.
 
 ## Development
 
@@ -416,18 +230,6 @@ As there's not yet an official way to handle SEO related output for metadata and
 1. [`balavishnuvj/remix-seo`](https://github.com/balavishnuvj/remix-seo): Collection of SEO utilities like sitemap, robots.txt, etc. for a Remix Application
 2. [`chaance/remix-seo`](https://github.com/chaance/remix-seo): A package for easily managing SEO meta and link tags in Remix
 3. [`fedeya/remix-sitemap`](https://github.com/fedeya/remix-sitemap): Sitemap generator for Remix applications
-
-### HMR Workaround
-
-> This setup has been done in this Kawal Masjid template.
-
-To enable HMR, at least as per Remix `v1.14`, when not primarily using Express server only (like using Vercel and another server), we have to a separate Express server. If using pnpm, you also have to install `react-refresh` to resolve the HMR dependency:
-
-```sh
-ni -D react-refresh
-```
-
-When running locally in development mode, use either the Express server or Vercel. This by default does not understand the Vercel lambda module format, so we fall back to the standard build output.
 
 ## References
 

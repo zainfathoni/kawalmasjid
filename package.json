@@ -1,9 +1,9 @@
 {
-  "name": "rewinds",
-  "description": "Web app starter kit with Remix and Tailwind",
+  "name": "kawalmasjid",
+  "description": "Platform to inform Infaq Online Masjid seluruh Indonesia.",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "M Haidar Hanif <git@kawalmasjid.com> (https://kawalmasj.id)",
+  "author": "Kawal Masjid <kawalmasjid@gmail.com> (https://kawalmasj.id)",
   "homepage": "https://kawalmasj.id",
   "repository": "https://github.com/zainfathoni/kawalmasjid",
   "bugs": "https://github.com/zainfathoni/kawalmasjid/issues",

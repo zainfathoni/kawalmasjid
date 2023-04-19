@@ -38,7 +38,7 @@ export const query = {
   search({ q }: { q: string | undefined }) {
     return prisma.place.findMany({
       where: {
-        isPublished: true,
+        // FIXME: isPublished: true,
         OR: [
           { name: { contains: q } },
           { slug: { contains: q } },

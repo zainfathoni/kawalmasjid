@@ -2,6 +2,7 @@ import { Input, Label, RemixForm } from "~/components";
 import { Search } from "~/icons";
 
 export function SearchForm({ action = "/search" }: { action?: string }) {
+  // TODO: set `q` as defaultValue of `Input` only when in the Search page
   return (
     <RemixForm method="GET" action={action} className="w-full">
       <fieldset className="relative flex items-center gap-1">

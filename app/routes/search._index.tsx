@@ -17,8 +17,8 @@ import {
 import type { LoaderArgs } from "@remix-run/node";
 
 export const meta = createMetaData({
-  title: "Search results",
-  description: "Could found some notes or users.",
+  name: "Search results",
+  description: "Could found some places or users.",
 });
 
 export const handle = createSitemap("/page", 0.9);
@@ -26,20 +26,20 @@ export const handle = createSitemap("/page", 0.9);
 export async function loader({ request }: LoaderArgs) {
   const { q } = getAllSearchQuery({ request });
 
-  const [notes, users] = await prisma.$transaction([
-    model.note.query.search({ q }),
+  const [places, users] = await prisma.$transaction([
+    model.place.query.search({ q }),
     model.user.query.search({ q }),
   ]);
-  const itemsCount = notes.length + users.length;
+  const itemsCount = places.length + users.length;
 
   return json(
-    { q, notes, users, itemsCount },
+    { q, places, users, itemsCount },
     { headers: createCacheHeaders(request) }
   );
 }
 
 export default function Route() {
-  const { q, notes, users, itemsCount } = useLoaderData<typeof loader>();
+  const { q, places, users, itemsCount } = useLoaderData<typeof loader>();
 
   return (
     <Layout
@@ -65,25 +65,25 @@ export default function Route() {
       <section className="space-y-4">
         {itemsCount <= 0 && <h3>Sorry, nothing found.</h3>}
 
-        {notes.length > 0 && (
+        {places.length > 0 && (
           <div className="space-y-2">
-            <span>Notes</span>
+            <span>Places</span>
             <ul className="space-y-1">
-              {notes.map((note) => {
+              {places.map((place) => {
                 return (
-                  <li key={note.id}>
+                  <li key={place.id}>
                     <RemixLink
                       prefetch="intent"
-                      to={`/${note.user.username}/${note.slug}`}
+                      to={`/${place.user.username}/${place.slug}`}
                       className="card-sm hover:card-hover"
                     >
-                      <h4>{note.title}</h4>
-                      <p>{truncateText(note.content)}</p>
+                      <h4>{place.name}</h4>
+                      <p>{truncateText(place.description)}</p>
                       <div className="queue-center dim">
-                        <AvatarAuto user={note.user} className="size-md" />
-                        <b>{note.user.name}</b>
+                        <AvatarAuto user={place.user} className="size-md" />
+                        <b>{place.user.name}</b>
                         <span>•</span>
-                        <span>{formatRelativeTime(note.updatedAt)}</span>
+                        <span>{formatRelativeTime(place.updatedAt)}</span>
                       </div>
                     </RemixLink>
                   </li>

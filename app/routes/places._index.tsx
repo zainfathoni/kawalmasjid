@@ -13,7 +13,6 @@ import {
   createCacheHeaders,
   createMetaData,
   createSitemap,
-  formatPluralItems,
   formatRelativeTime,
 } from "~/utils";
 
@@ -28,7 +27,7 @@ export const meta = createMetaData({
 });
 
 export async function loader({ request }: LoaderArgs) {
-  const places = await model.place.query.getAll();
+  const places = await model.place.query.getAll({ limit: 10 });
   const placesCount = places.length;
   return json(
     { places, placesCount },
@@ -52,9 +51,7 @@ export default function Route() {
           withMarginBottom={false}
         >
           <h1>Semua masjid ({placesCount})</h1>
-          <p>
-            Seluruh data masjid yang telah dikumpulkan.
-          </p>
+          <p>Seluruh data masjid yang telah dikumpulkan.</p>
           <ButtonLink to="/new" size="sm">
             <Plus className="size-sm" />
             <span>Tambah Masjid</span>

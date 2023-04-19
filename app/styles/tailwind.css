@@ -49,7 +49,7 @@
 @layer components {
   /* shouldn't be a React component, because any element can be styled as a card */
   .card-base {
-    @apply rounded border-2 border-surface-100 dark:border-surface-800;
+    @apply rounded border-2 border-surface-100 dark:border-surface-700;
   }
   .card {
     @apply card-base block px-3 py-2;

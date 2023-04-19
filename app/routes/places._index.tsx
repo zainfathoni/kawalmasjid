@@ -28,7 +28,8 @@ export const meta = createMetaData({
 
 export async function loader({ request }: LoaderArgs) {
   const places = await model.place.query.getAll({ limit: 10 });
-  const placesCount = places.length;
+  const placesCount = await model.place.query.count();
+
   return json(
     { places, placesCount },
     { headers: createCacheHeaders(request) }
@@ -50,8 +51,8 @@ export default function Route() {
           withBackground={false}
           withMarginBottom={false}
         >
-          <h1>Semua masjid ({placesCount})</h1>
-          <p>Seluruh data masjid yang telah dikumpulkan.</p>
+          <h1>Semua masjid</h1>
+          <p>Seluruh {placesCount} data masjid yang telah dikumpulkan.</p>
           <ButtonLink to="/new" size="sm">
             <Plus className="size-sm" />
             <span>Tambah Masjid</span>

@@ -18,7 +18,7 @@ export function SiteFooter({ noThemeToggle }: Props) {
     <footer
       className={cn(
         "bg-surface-50 dark:bg-surface-900", // background
-        "border-t-2 border-surface-100 dark:border-surface-800", // border
+        "border-t-2 border-surface-100 dark:border-surface-700", // border
         "mt-60 py-4 sm:py-8"
       )}
     >

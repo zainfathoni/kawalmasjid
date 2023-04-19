@@ -33,7 +33,7 @@ export const buttonVariants = cva(
         subtle:
           "bg-brand-500/20 text-brand-800 hover:bg-brand-500/50 dark:bg-brand-900 dark:text-brand-200 hover:dark:bg-brand-800",
         outline:
-          "border-2 border-surface-100 bg-transparent text-brand-800 hover:bg-surface-100/30 dark:border-surface-800 dark:text-brand-200 hover:dark:bg-surface-800/30",
+          "border-2 border-surface-100 bg-transparent text-brand-800 hover:bg-surface-100/30 dark:border-surface-700 dark:text-brand-200 hover:dark:bg-surface-800/30",
         ghost: "text-brand-800 hover:bg-brand-500/20 dark:text-brand-100",
         none: "",
         link: "bg-transparent text-brand-800 underline-offset-4 hover:bg-transparent hover:underline dark:text-brand-200",
@@ -160,7 +160,7 @@ export const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+  VariantProps<typeof buttonVariants> { }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (

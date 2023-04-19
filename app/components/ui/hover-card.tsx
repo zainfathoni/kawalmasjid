@@ -22,7 +22,7 @@ export const HoverCardContent = forwardRef<
     align={align}
     sideOffset={sideOffset}
     className={cn(
-      "z-50 w-64 rounded-md border border-surface-100 bg-white p-4 shadow-md outline-none animate-in zoom-in-90 dark:border-surface-800 dark:bg-surface-800",
+      "z-50 w-64 rounded-md border border-surface-100 bg-white p-4 shadow-md outline-none animate-in zoom-in-90 dark:border-surface-700 dark:bg-surface-800",
       className
     )}
     {...props}

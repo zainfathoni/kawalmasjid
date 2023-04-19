@@ -177,7 +177,7 @@ const madeForYouAlbums: Album[] = [
 
 export function MusicPlayerDemo() {
   return (
-    <div className="overflow-hidden rounded-md border-2 border-surface-200 bg-gradient-to-b from-brand-300 to-blue-300 dark:border-surface-800 dark:from-brand-800 dark:to-blue-800">
+    <div className="overflow-hidden rounded-md border-2 border-surface-200 bg-gradient-to-b from-brand-300 to-blue-300 dark:border-surface-700 dark:from-brand-800 dark:to-blue-800">
       <Menubar className="rounded-none border-b-2 border-none dark:bg-surface-950">
         <MenubarMenu>
           <MenubarTrigger className="queue-center font-bold">
@@ -732,7 +732,7 @@ function AlbumArtwork({
   );
 }
 
-interface DemoIndicatorProps extends React.HTMLAttributes<HTMLSpanElement> {}
+interface DemoIndicatorProps extends React.HTMLAttributes<HTMLSpanElement> { }
 
 export function DemoIndicator({ className }: DemoIndicatorProps) {
   return (

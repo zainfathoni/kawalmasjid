@@ -124,11 +124,11 @@ export default function Route() {
             disabled={isSubmitting}
           >
             <div className="space-y-1">
-              <Label htmlFor={name.id}>Full Name</Label>
+              <Label htmlFor={name.id}>Nama Lengkap</Label>
               <Input
                 {...conform.input(name)}
                 type="text"
-                placeholder="Your Full Name"
+                placeholder="Nama Lengkap Anda"
                 autoComplete="name"
                 autoFocus
                 required
@@ -145,7 +145,7 @@ export default function Route() {
               <Input
                 {...conform.input(username)}
                 type="text"
-                placeholder="yourname"
+                placeholder="namaanda"
                 autoComplete="username"
                 required
               />
@@ -155,16 +155,16 @@ export default function Route() {
                 </Alert>
               )}
               <p className="text-xs text-surface-500">
-                4 to 20 characters (letters, numbers, dot, underscore)
+                4-20 karakter (huruf, angka, titik, underscore)
               </p>
             </div>
 
             <div className="space-y-1">
-              <Label htmlFor={email.id}>Email address</Label>
+              <Label htmlFor={email.id}>Email</Label>
               <Input
                 {...conform.input(email)}
                 type="email"
-                placeholder="you@email.com"
+                placeholder="anda@email.com"
                 autoComplete="email"
                 required
               />
@@ -179,7 +179,7 @@ export default function Route() {
               <Label htmlFor={password.id}>Password</Label>
               <InputPassword
                 {...conform.input(password)}
-                placeholder="Password (at least 8 characters)"
+                placeholder="Password (minimal 8 karakter)"
                 autoComplete="current-password"
                 required
               />
@@ -188,7 +188,7 @@ export default function Route() {
                   {password.error}
                 </Alert>
               )}
-              <p className="text-xs text-surface-500">8 characters or more</p>
+              <p className="text-xs text-surface-500">8 karakter atau lebih</p>
             </div>
 
             <input type="hidden" name="redirectTo" value={redirectTo} />
@@ -199,10 +199,10 @@ export default function Route() {
               name="intent"
               value="submit"
               isSubmitting={isSubmitting}
-              loadingText="Creating account..."
+              loadingText="Membuat akun..."
               className="w-full"
             >
-              Bergabung ke {configSite.name}
+              Buat akun {configSite.name}
             </ButtonLoading>
           </fieldset>
 

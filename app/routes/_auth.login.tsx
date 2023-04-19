@@ -34,13 +34,13 @@ import type { z } from "zod";
 export const meta: V2_MetaFunction = () => {
   return createMetaData({
     title: "Login",
-    description: `Continue with your ${configSite.name} account`,
+    description: `Lanjut dengan akun ${configSite.name}`,
   });
 };
 
 export async function loader({ request }: LoaderArgs) {
   await authenticator.isAuthenticated(request, {
-    successRedirect: "/user/dashboard",
+    successRedirect: "/places",
   });
 
   const headerHeadingText = getRandomText([
@@ -93,7 +93,7 @@ export async function action({ request }: ActionArgs) {
    * But this won't check the email and password again
    */
   await authenticator.authenticate("user-pass", request, {
-    successRedirect: getRedirectTo(request) || "/user/dashboard",
+    successRedirect: getRedirectTo(request) || "/places",
     failureRedirect: "/login",
   });
   return json(submission);
@@ -138,11 +138,11 @@ export default function Route() {
             disabled={isSubmitting}
           >
             <div className="space-y-1">
-              <Label htmlFor={email.id}>Email address</Label>
+              <Label htmlFor={email.id}>Email</Label>
               <Input
                 {...conform.input(email)}
                 type="email"
-                placeholder="you@email.com"
+                placeholder="anda@email.com"
                 autoComplete="email"
                 autoFocus
                 required
@@ -158,7 +158,7 @@ export default function Route() {
               <Label htmlFor={password.id}>Password</Label>
               <InputPassword
                 {...conform.input(password)}
-                placeholder="Enter password"
+                placeholder="Masukkan password"
                 autoComplete="current-password"
                 required
               />
@@ -167,7 +167,7 @@ export default function Route() {
                   {password.error}
                 </Alert>
               )}
-              <p className="text-xs text-surface-500">At least 8 characters</p>
+              <p className="text-xs text-surface-500">Minimal 8 karakter</p>
             </div>
 
             {/* TODO: Implement remember checkbox */}
@@ -187,7 +187,7 @@ export default function Route() {
               name="intent"
               value="submit"
               isSubmitting={isSubmitting}
-              loadingText="Logging in..."
+              loadingText="Sedang login..."
             >
               Login
             </ButtonLoading>

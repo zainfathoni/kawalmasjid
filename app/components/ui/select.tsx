@@ -44,7 +44,7 @@ export const SelectContent = forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        "relative z-50 min-w-[8rem] overflow-hidden rounded-md border-2 border-surface-100 bg-white text-surface-800 shadow-md animate-in fade-in-80 dark:border-surface-800 dark:bg-surface-900 dark:text-surface-200",
+        "relative z-50 min-w-[8rem] overflow-hidden rounded-md border-2 border-surface-100 bg-white text-surface-800 shadow-md animate-in fade-in-80 dark:border-surface-700 dark:bg-surface-900 dark:text-surface-200",
         className
       )}
       {...props}

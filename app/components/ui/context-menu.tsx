@@ -67,7 +67,7 @@ export const ContextMenuContent = forwardRef<
     <ContextMenuPrimitive.Content
       ref={ref}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border-2 border-surface-100 bg-white p-1 text-surface-700 shadow-md animate-in fade-in-80 dark:border-surface-800 dark:bg-surface-900 dark:text-surface-400",
+        "z-50 min-w-[8rem] overflow-hidden rounded-md border-2 border-surface-100 bg-white p-1 text-surface-700 shadow-md animate-in fade-in-80 dark:border-surface-700 dark:bg-surface-900 dark:text-surface-400",
         className
       )}
       {...props}

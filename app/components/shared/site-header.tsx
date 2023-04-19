@@ -12,29 +12,27 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
   Icon,
   Logo,
   RemixLinkText,
   RemixNavLink,
   SearchForm,
-  ThemeToggleButton,
+  ThemeToggleButton
 } from "~/components";
 import { configDev, configSite } from "~/configs";
 import { getUserIsAllowed } from "~/helpers";
 import { useRootLoaderData } from "~/hooks";
 import {
-  Components,
-  CreditCard,
+  Components, LayoutDashboard,
+  Mosque,
   DashboardSpeed,
   Inbox,
-  Keyboard,
   LogOut,
   Menu,
   Plus,
   Settings,
-  User,
+  User
 } from "~/icons";
 import { cn } from "~/utils";
 
@@ -255,38 +253,29 @@ export function HeaderUserMenu({
           <DropdownMenuItem asChild>
             <RemixNavLink prefetch="intent" to={`/${user.username}`}>
               <User className="size-sm me-2" />
-              <span>Profile</span>
+              <span>Profil</span>
             </RemixNavLink>
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>
             <RemixNavLink prefetch="intent" to={`/user/dashboard`}>
-              <DashboardSpeed className="size-sm me-2" />
+              <LayoutDashboard className="size-sm me-2" />
               <span>Dashboard</span>
+            </RemixNavLink>
+          </DropdownMenuItem>
+
+          <DropdownMenuItem asChild>
+            <RemixNavLink prefetch="intent" to={`/user/places`}>
+              <Mosque className="size-sm me-2" />
+              <span>Data Masjid</span>
             </RemixNavLink>
           </DropdownMenuItem>
 
           <DropdownMenuItem asChild>
             <RemixNavLink to={`/user/settings`}>
               <Settings className="size-sm me-2" />
-              <span>Settings</span>
+              <span>Pengaturan</span>
             </RemixNavLink>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <CreditCard className="size-sm me-2" />
-            <span>Billing</span>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <Inbox className="size-sm me-2" />
-            <span>Notifications</span>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <Keyboard className="size-sm me-2" />
-            <span>Command Palette</span>
-            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 

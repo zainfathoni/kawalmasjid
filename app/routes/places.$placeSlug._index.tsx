@@ -1,12 +1,17 @@
-import { ActionArgs, json, redirect, V2_MetaFunction } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { notFound, serverError } from "remix-utils";
 
 import { Balancer, Button, ButtonLink, Layout, RemixForm } from "~/components";
 import { model } from "~/models";
-import { createCacheHeaders, createMetaData, createSitemap, invariant } from "~/utils";
+import {
+  createCacheHeaders,
+  createMetaData,
+  createSitemap,
+  invariant,
+} from "~/utils";
 
-import type { LoaderArgs } from "@remix-run/node";
+import type { LoaderArgs, ActionArgs, V2_MetaFunction } from "@remix-run/node";
 import { requireUserSession } from "~/helpers";
 import { parse } from "@conform-to/dom";
 import { useRootLoaderData } from "~/hooks";
@@ -72,7 +77,8 @@ export default function Route() {
   const isOwner = userSession?.id === place.userId;
 
   return (
-    <Layout isSpaced
+    <Layout
+      isSpaced
       variant="sm"
       layoutHeader={
         <header className="mb-4 space-y-4 bg-brand-100 py-3 dark:bg-brand-800/20 sm:py-5">
@@ -107,8 +113,8 @@ export default function Route() {
             </h1>
           </div>
         </header>
-      }>
-
+      }
+    >
       <article className="prose-config mt-10 whitespace-pre-wrap">
         {place.description}
       </article>

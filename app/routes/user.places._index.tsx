@@ -53,29 +53,33 @@ export default function Route() {
   return (
     <>
       <PageHeader size="xs" withBackground={false} withContainer={false}>
-        <div className="queue-center">
-          <RemixLink to=".">
+        <div className="stack">
+          <div>
             <h1>Data masjid</h1>
             <p>Semua yang telah ditambahkan</p>
-          </RemixLink>
-          <ButtonLink to="new" size="sm">
-            <Plus className="size-sm" />
-            <span>Tambah Masjid</span>
-          </ButtonLink>
-          {configDev.isDevelopment && (
-            <RemixForm method="delete">
-              <Button
-                size="sm"
-                variant="danger"
-                name="intent"
-                value="user-delete-all-places"
-                disabled={placesCount <= 0}
-              >
-                <Trash className="size-sm" />
-                <span>Hapus semua</span>
-              </Button>
-            </RemixForm>
-          )}
+          </div>
+
+          <div className="queue-center">
+            <ButtonLink to="new" size="sm">
+              <Plus className="size-sm" />
+              <span>Tambah Masjid</span>
+            </ButtonLink>
+
+            {configDev.isDevelopment && (
+              <RemixForm method="delete">
+                <Button
+                  size="sm"
+                  variant="danger"
+                  name="intent"
+                  value="user-delete-all-places"
+                  disabled={placesCount <= 0}
+                >
+                  <Trash className="size-sm" />
+                  <span>Hapus semua</span>
+                </Button>
+              </RemixForm>
+            )}
+          </div>
         </div>
       </PageHeader>
 

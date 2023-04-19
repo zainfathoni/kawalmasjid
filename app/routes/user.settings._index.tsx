@@ -94,16 +94,16 @@ export default function Route() {
     <div className="contain-sm">
       <PageHeader size="xs" withBackground={false} withContainer={false}>
         <h1 className="queue-center text-3xl">
-          <Settings />
-          Settings
+          <Settings className="size-lg" />
+          Pengaturan
         </h1>
         <p>
-          <span>Settings for </span>
+          <span>Pengaturan untuk </span>
           <RemixLinkText prefetch="intent" to={`/${user.username}`}>
             @{user.username}
           </RemixLinkText>
         </p>
-        <p>Change your profile, email, password, etc</p>
+        <p>Ubah profil, email, password, dsb</p>
       </PageHeader>
 
       <section>
@@ -120,7 +120,7 @@ export function UserSettingsTabs() {
     <Tabs defaultValue="user-data" className="w-full">
       <TabsList className="mb-2">
         <TabsTrigger value="user-data">User</TabsTrigger>
-        <TabsTrigger value="user-profile">Profile</TabsTrigger>
+        <TabsTrigger value="user-profile">Profil</TabsTrigger>
         <TabsTrigger value="user-password">Password</TabsTrigger>
       </TabsList>
       <TabsContent value="user-data">

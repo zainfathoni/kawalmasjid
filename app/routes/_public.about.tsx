@@ -2,9 +2,8 @@ import { Balancer, Layout, Image } from "~/components";
 import { createMetaData, createSitemap } from "~/utils";
 
 export const meta = createMetaData({
-  title: "About",
-  description:
-    "Just some quick info about this project and showcase some of the features.",
+  title: "Tentang Kawal Masjid",
+  description: "Website ini masih dalam pengembangan.",
 });
 
 export const handle = createSitemap("/about", 0.9);

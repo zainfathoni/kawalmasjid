@@ -22,8 +22,8 @@ import { Plus } from "~/icons";
 export const handle = createSitemap("/places", 0.8);
 
 export const meta = createMetaData({
-  title: "Places",
-  description: "Public places created by the community.",
+  title: "Semua masjid",
+  description: "Seluruh data masjid yang telah dikumpulkan.",
 });
 
 export async function loader({ request }: LoaderArgs) {

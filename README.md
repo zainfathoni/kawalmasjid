@@ -1,6 +1,6 @@
 # ⏪ Kawal Masjid Stack
 
-![The Kawal Masjid Stack](https://raw.githubusercontent.com/zainfathoni/kawalmasjid/main/public/assets/screenshots/rewinds-screenshot-dark.png)
+![Kawal Masjid](https://raw.githubusercontent.com/zainfathoni/kawalmasjid/main/public/assets/screenshots/kawalmasjid-screenshot-light.png)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Remix](https://img.shields.io/badge/Remix-000000?style=flat-square&logo=remix&logoColor=white)
@@ -14,46 +14,18 @@
 
 # Introduction
 
-Kawal Masjid is a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities for your Remix project.
+Kawal Masjid is a platform to inform Infaq Online Masjid seluruh Indonesia.
 
-## Goals
+Made with [Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
 
-You can use this to build any web apps (also what I'm using Kawal Masjid for):
-
-- Personal Website
-- Company Profile
-- Todo List
-- Blog or News
-- Social Media
-- Community Forum
-- Support Desk
-- Art Gallery
-- Job Board
-- Hiring or Recruitment
-- Applicant Tracking System (ATS)
-- E-Commerce
-- Inventory Management
-- Events Management
-- Knowledge Management
-- Product or Project Management
-- Content Management System (CMS)
-- Learning Management System (LMS)
-
-## Demos
+## Live
 
 Visit [kawalmasj.id](https://kawalmasj.id)
 
 Follow the progress on:
 
-- GitHub: [@kawalmasjid](https://github.com/kawalmasjid)
 - Twitter: [@kawalmasjid](https://twitter.com/kawalmasjid)
-
-## Code repository and links
-
-- [zainfathoni/kawalmasjid](https://github.com/zainfathoni/kawalmasjid)
-- [kawalmasj.id](https://kawalmasj.id)
-- [rewinds.vercel.app](https://rewinds.vercel.app)
-- [rewinds.dev](https://rewinds.dev) (sooner or later)
+- GitHub: [kawalmasjid](https://github.com/zainfathoni/kawalmasjid)
 
 # Tech Stack
 
@@ -65,7 +37,7 @@ As a reminder:
 
 ## Primary Tech Stack
 
-- Kawal Masjid: Remix Tailwind Stack
+- Remix and Tailwind
 - TRIP: TypeScript/Tailwind Remix/React/Radix Interface Prisma
   - VPS: Vercel PlanetScale
 
@@ -309,12 +281,18 @@ doppler secrets download --no-file --format env > .env
 
 ## Prisma ORM and Database Connection
 
-It's up to you which database/DBMS you want to use with the app. This repo is suited to use either your own MySQL instance or MySQL on PlanetScale. But don't use SQLite because it doesn't have `@db.Text` annotation and `model.createMany()` function.
+It's up to you which database/DBMS you want to use with the app that supported by Prisma ORM. This repo is suited to use either your own MySQL instance or MySQL on PlanetScale. But don't use SQLite because it doesn't have `@db.Text` annotation and `model.createMany()` function.
 
 For example:
 
 ```sh
 DATABASE_URL='mysql://username:pscale_pw_password@region.connect.psdb.cloud/name?sslaccept=strict'
+```
+
+If you need to use local database, run [Docker compose](./docker-compose.yml):
+
+```sh
+docker compose up
 ```
 
 While in development, you can:

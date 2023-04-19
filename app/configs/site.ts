@@ -34,8 +34,8 @@ export const configSite = {
   },
 
   navItems: [
-    { to: "/", name: "Home", icon: "home" },
-    { to: "/about", name: "About", icon: "about" },
+    { to: "/", name: "Beranda", icon: "home" },
+    { to: "/about", name: "Tentang", icon: "about" },
     { to: "/places", name: "Direktori", icon: "places" },
   ],
 };

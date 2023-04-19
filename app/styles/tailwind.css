@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-surface-950;
+    @apply text-surface-950 dark:text-surface-50;
+    @apply min-h-screen scroll-smooth font-sans antialiased transition-colors;
+    @apply selection:bg-brand-500/20 selection:text-brand-950 dark:selection:bg-brand-500/20 dark:selection:text-brand-100;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply scroll-m-20 font-brand tracking-tight;
+  }
+  h1 {
+    @apply text-4xl font-bold lg:text-5xl;
+  }
+  h2 {
+    @apply text-2xl font-semibold lg:text-3xl;
+  }
+  h3 {
+    @apply text-xl font-semibold lg:text-2xl;
+  }
+  h4 {
+    @apply text-lg font-semibold lg:text-xl;
+  }
+  h5 {
+    @apply font-semibold lg:text-lg;
+  }
+  h6 {
+    @apply font-semibold lg:text-base;
+  }
+  header {
+    @apply space-y-1;
+  }
+  b {
+    @apply font-bold;
+  }
+  code {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  /* shouldn't be a React component, because any element can be styled as a card */
+  .card-base {
+    @apply rounded border-2 border-surface-100 dark:border-surface-800;
+  }
+  .card {
+    @apply card-base block px-3 py-2;
+  }
+  .card-sm {
+    @apply card-base block px-2 py-1;
+  }
+  .card-lg {
+    @apply card-base block p-6;
+  }
+  .card-hover {
+    @apply bg-surface-100/30 dark:bg-surface-800/30;
+  }
+  .card-action {
+    @apply bg-surface-50 dark:bg-black;
+  }
+  .code {
+    @apply bg-slate-200 text-slate-900 hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-400 hover:dark:bg-slate-700;
+    @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono font-semibold  transition-colors before:content-none after:content-none;
+  }
+}
+
+@layer utilities {
+  /* Content */
+  .link {
+    @apply text-brand-600 transition-colors hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300;
+  }
+  .dim {
+    @apply text-surface-400 dark:text-surface-600;
+  }
+  .dim-xs {
+    @apply dim text-xs;
+  }
+  .dim-hover {
+    @apply hover:text-surface-500 hover:dark:text-surface-500;
+  }
+  .inline-icon {
+    @apply inline-block align-middle;
+  }
+
+  /* Layouts */
+  .px-layout {
+    @apply px-2 sm:px-4;
+  }
+  .contain-full {
+    @apply mx-auto w-full max-w-7xl;
+  }
+  .contain-sm-full {
+    @apply mx-auto w-full max-w-3xl;
+  }
+  .contain {
+    @apply contain-full px-layout;
+  }
+  .contain-sm {
+    @apply contain-sm-full px-layout;
+  }
+  .queue {
+    @apply flex flex-wrap gap-2;
+  }
+  .queue-sm {
+    @apply flex flex-wrap gap-1 sm:gap-2;
+  }
+  .queue-lg {
+    @apply flex flex-wrap gap-2 sm:gap-4;
+  }
+  .queue-center {
+    @apply queue items-center;
+  }
+  .queue-center-sm {
+    @apply queue-sm items-center;
+  }
+  .stack {
+    @apply queue flex-col;
+  }
+  .stack-lg {
+    @apply queue-lg flex-col;
+  }
+  .stack-center {
+    @apply stack items-center;
+  }
+
+  /* Sizes */
+  .size-xs {
+    @apply h-3 w-3;
+  }
+  .size-sm {
+    @apply h-4 w-4;
+  }
+  .size-md {
+    @apply h-5 w-5;
+  }
+  .size-lg {
+    @apply h-7 w-7;
+  }
+  .size-xl {
+    @apply h-10 w-10;
+  }
+  .size-2xl {
+    @apply h-12 w-12;
+  }
+  .size-3xl {
+    @apply h-16 w-16;
+  }
+  .size-4xl {
+    @apply h-20 w-20;
+  }
+  .size-5xl {
+    @apply h-28 w-28;
+  }
+
+  /* Prose */
+  .prose-config {
+    @apply prose dark:prose-invert sm:prose-lg;
+    @apply prose-p:prose-p-styles;
+    @apply prose-a:prose-a-styles;
+    @apply prose-ul:prose-list-styles;
+    @apply prose-ol:prose-list-styles;
+    @apply prose-code:prose-code-styles;
+    @apply text-surface-900 dark:text-surface-50;
+  }
+  .prose-p-styles {
+    @apply sm:text-lg;
+  }
+  .prose-a-styles {
+    @apply link font-semibold no-underline;
+  }
+  .prose-list-styles {
+    @apply my-2 marker:text-base marker:text-brand-700 dark:marker:text-brand-300 [&>li]:mt-2;
+  }
+  .prose-code-styles {
+    @apply code;
+  }
+}
+
+/* NProgress styles need to be outside of layers because using #id */
+#nprogress {
+  @apply pointer-events-none z-50;
+}
+#nprogress .bar {
+  @apply fixed left-0 top-0 z-50 h-1 w-full bg-brand-600 dark:bg-brand-400;
+}
+#nprogress .peg {
+  @apply absolute right-0 z-50 block h-full w-28 -translate-y-1 translate-x-0 rotate-3 opacity-100;
+  @apply shadow-[0_0_15px_#000,0_0_10px_#000] shadow-brand-900 dark:shadow-[0_0_15px_#FFF,0_0_10px_#FFF] dark:shadow-brand-500;
+}
+#nprogress .spinner {
+  @apply fixed bottom-2 right-2 z-50 block;
+}
+#nprogress .spinner-icon {
+  @apply z-50 box-border h-6 w-6 animate-spin rounded-full border-4 border-transparent  duration-500;
+  @apply border-l-brand-600 border-t-brand-600 dark:border-l-brand-300 dark:border-t-brand-300;
+}
+.nprogress-custom-parent {
+  @apply relative z-50 overflow-hidden;
+}
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  @apply absolute z-50;
+}

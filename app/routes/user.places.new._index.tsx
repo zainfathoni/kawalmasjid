@@ -24,7 +24,7 @@ import { createSitemap } from "~/utils";
 
 import type { ActionArgs } from "@remix-run/node";
 import type { z } from "zod";
-import { InfoEmpty, SubmitDocument } from "~/icons";
+import { Mosque } from "~/icons";
 
 export const handle = createSitemap();
 
@@ -74,18 +74,8 @@ export default function Route() {
     <section className="space-y-2">
       <header className="py-4">
         <h1 className="queue-center text-3xl">
-          <SubmitDocument />
-          <span>Create a new place</span>
-          <TooltipAuto
-            content={
-              <p>
-                A place can be a blog post, news article, <br /> tutorial, or
-                just a regular place
-              </p>
-            }
-          >
-            <InfoEmpty className="size-md" />
-          </TooltipAuto>
+          <Mosque className="size-lg" />
+          <span>Tambah informasi masjid</span>
         </h1>
       </header>
 
@@ -95,24 +85,24 @@ export default function Route() {
           className="space-y-4 disabled:opacity-80"
         >
           <div className="space-y-1">
-            <Label htmlFor={name.id}>Name</Label>
+            <Label htmlFor={name.id}>Nama masjid</Label>
             <Input
               {...conform.input(name)}
               autoFocus
               type="text"
-              placeholder="Add a name"
-              defaultValue={configDev.isDevelopment ? "A new example" : ""}
+              placeholder="Nama masjid"
+              defaultValue={configDev.isDevelopment ? "Masjid Istiqlal Jakarta Pusat" : ""}
               className="border-none px-1 text-lg sm:text-xl md:text-2xl lg:text-3xl"
             />
             <Alert id={name.errorId}>{name.error}</Alert>
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor={description.id}>Description</Label>
+            <Label htmlFor={description.id}>Deskripsi atau keterangan</Label>
             <TextArea
               {...conform.input(description)}
-              placeholder="Masukkan dekripsi masjid, termasuk kontak, alamat, dll. Maksimum 5000 karakter"
-              rows={20}
+              placeholder="Masukkan dekripsi dan keterangan masjid, termasuk kontak, alamat, dll. Maksimum 5000 karakter."
+              rows={10}
               defaultValue={configDev.isDevelopment ? "Deskripsi masjid." : ""}
               className="border-none px-1 sm:text-lg"
             />
@@ -125,16 +115,16 @@ export default function Route() {
               name="intent"
               value="submit"
               isSubmitting={isSubmitting}
-              loadingText="Creating..."
+              loadingText="Menambahkan masjid..."
               className="grow"
             >
-              Create
+              Tambah Masjid
             </ButtonLoading>
             <Button type="reset" variant="subtle">
               Reset
             </Button>
             <ButtonLink to=".." variant="ghost" accent="red">
-              Cancel
+              Batal
             </ButtonLink>
           </div>
         </fieldset>

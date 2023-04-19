@@ -79,7 +79,7 @@ export const query = {
       include: {
         role: true,
         profile: true,
-        notes: {
+        places: {
           orderBy: { updatedAt: "desc" },
         },
       },

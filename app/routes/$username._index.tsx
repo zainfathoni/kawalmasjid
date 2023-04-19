@@ -127,24 +127,24 @@ export default function Route() {
           </section>
 
           <section className="space-y-2">
-            <h3>Data Masjid</h3>
+            <p>Data Masjid</p>
             <ul className="space-y-2">
-              {user.notes.length <= 0 && (
+              {user.places.length <= 0 && (
                 <p>Belum ada data masjid yang ditambahkan.</p>
               )}
-              {user.notes.map((note) => {
+              {user.places.map((place) => {
                 return (
-                  <li key={note.id}>
+                  <li key={place.id}>
                     <RemixLink
-                      to={note.slug}
+                      to={`/places/${place.slug}`}
                       className="card hover:card-hover block"
                     >
-                      <h4>{note.title}</h4>
-                      <p>{truncateText(note.content)}</p>
+                      <h4>{place.name}</h4>
+                      <p>{truncateText(place.description)}</p>
                       <p className="dim queue-sm">
-                        <span>{formatDateTime(note.updatedAt)}</span>
+                        <span>{formatDateTime(place.updatedAt)}</span>
                         <span>•</span>
-                        <span>{formatRelativeTime(note.updatedAt)}</span>
+                        <span>{formatRelativeTime(place.updatedAt)}</span>
                       </p>
                     </RemixLink>
                   </li>

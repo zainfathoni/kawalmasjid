@@ -86,18 +86,13 @@ Already setup in Kawal Masjid and some are for alternatives:
   - [Stylelint](https://stylelint.io) 🧰
   - Environment Variable/Secret
     - [Doppler](https://doppler.com) 🧩🎉
-    - [Dotenv](https://dotenv.org) 🧩🎉
 - Deployment
   - [Vercel](https://vercel.com) 🧰🧩🎉
-  - [Fly](https://fly.io) 🧩🎉
-  - [Render](https://render.com) 🧩🎉
-- Domain/DNS
-  - [Cloudflare](https://cloudflare.com) 🧩🎉
 - Cache/Ratelimit
   - [Upstash](https://upstash.com) 🚧🧩🎉
 - Image
   - [ImageKit](https://imagekit.io) 🚧🧩🎉
-  - [Cloudinary](https://cloudinary.com) 🚧🧩🎉
+  - [Uploadcare](https://uploadcare.com) 🚧🧩🎉
 - Email
   - Template
     - [React Email](https://react.email) 🚧🧩
@@ -106,11 +101,6 @@ Already setup in Kawal Masjid and some are for alternatives:
     - [Resend](https://resend.com) 🚧🧩🎉
   - Marketing
     - [ConvertKit](https://convertkit.com) 🚧🧩🎉
-    - [Bento](https://bentonow.com) 🚧🧩🎉
-- Payment
-  - [Lemon Squeezy](https://lemonsqueezy.com) 🚧🧩🎉
-  - [Paddle](https://paddle.com) 🚧🧩🎉
-  - [Stripe](https://stripe.com) 🚧🧩🎉
 - Testing 🚧
   - [Vitest](https://vitest.dev) 🚧🧩
   - [Testing Library](https://testing-library.com) 🚧🧩
@@ -122,7 +112,7 @@ Already setup in Kawal Masjid and some are for alternatives:
 
 ## Extra Tech Stack
 
-Although these are not included in Kawal Masjid, if you need a separate backend/server/service, here are the recommendations:
+Although these are not included in Kawal Masjid, if there is a need for a separate backend/server/service, here are the recommendations:
 
 - Core/API
   - REST
@@ -210,8 +200,8 @@ Included setup for the developers:
 - [x] Auth with Remix Auth using a session cookie
 - [ ] Image hosting integration
 - [ ] Email delivery system
-  - [ ] Transactional email with Mailjet/Resend and React Email
-  - [ ] Marketing email with ConvertKit/Bento
+  - [ ] Transactional email with Mailjet and React Email
+  - [ ] Marketing email with ConvertKit
 - [x] SEO functions with meta tags, `robots.txt`, `sitemap.xml`, `canonical`
 - [x] Various utilities with external libraries
   - [x] Root loader data for env, theme, user, etc
@@ -224,19 +214,10 @@ Included setup for the developers:
 
 Recommended extra setup:
 
-- Connect to monitoring service such as Better Uptime, Instatus, or Pulsetic.
+- Connect to monitoring service such as Better Uptime or Instatus.
 - Connect Vercel project to Axiom for better log management.
 - Connect to Highlight to report and analyze errors.
 - Use [Google Search Console](https://search.google.com/search-console/about) to check the sitemap and SERP-related stuffs.
-- Use Clerk or Auth0 to [replace Remix Auth](https://clerk.com/docs/quickstarts/get-started-with-remix) if you need more than this.
-
-## Some Details
-
-This repo is kind of over-engineered to have high flexibility and cover a lot of use cases for different applications/projects/products, especially what I'm working with several other people.
-
-This template uses [`shadcn/ui`](https://github.com/shadcn/ui) as the base components style and setup for full stack app development inspired by [T3 Stack](https://create.t3.gg). The main reason is this repo uses Remix, not Next.js like those two inspirations.
-
-Currently includes the Remix HMR and HDR optional setup with both Vercel config and Express server on development as per Remix `v1.14`. The config is just combining the templates from Remix with Express and Vercel based on the environment. With separated Expresss you are also able to debug the process from code editor like VS Code much easier.
 
 # Development
 
@@ -245,8 +226,7 @@ Currently includes the Remix HMR and HDR optional setup with both Vercel config 
 Before running your Remix app locally, make sure your project's local dependencies are installed using your preferred package manager agent:
 
 ```sh
-npm i
-yarn i
+# this repo is using pnpm lock file
 pnpm i
 ```
 
@@ -264,10 +244,11 @@ Use plain `.env` file for local development:
 ```sh
 cp -i .env.example .env
 # -i or --interactive will ask before overwrite
-# then edit `.env` as you need
 ```
 
-Alternatively, it's recommended to use [Doppler](https://doppler.com), or [Dotenv](https://dotenv.org), or somethin similar to manage the credentials.
+Then edit `.env` as you need.
+
+Alternatively, it's recommended to use [Doppler](https://doppler.com), or [Dotenv](https://dotenv.org), or something similar to manage the credentials.
 
 For example if using Doppler:
 
@@ -281,9 +262,9 @@ doppler secrets download --no-file --format env > .env
 
 ## Prisma ORM and Database Connection
 
-It's up to you which database/DBMS you want to use with the app that supported by Prisma ORM. This repo is suited to use either your own MySQL instance or MySQL on PlanetScale. But don't use SQLite because it doesn't have `@db.Text` annotation and `model.createMany()` function.
+It's up to you which database/DBMS you want to use with the app that supported by Prisma ORM. This repo is suited to use either your own MySQL instance or MySQL on PlanetScale. But we don't use SQLite because it doesn't have `@db.Text` annotation and `model.createMany()` function.
 
-For example:
+Once you have the database URL connection string from PlanetScale MySQL instance, for example:
 
 ```sh
 DATABASE_URL='mysql://username:pscale_pw_password@region.connect.psdb.cloud/name?sslaccept=strict'
@@ -347,13 +328,6 @@ When you update some significant changes in the TypeScript config, ESLint config
 > Prisma: Restart Language Server
 ```
 
-## Customize some contents
-
-Look up for these comments:
-
-- `EDITME`: You can edit them based on your need
-- `TODO`: You can see that they are in progress
-
 # Deployment
 
 ## Vercel
@@ -416,7 +390,7 @@ It is generally recommended to use a Git repository, because future commits will
 
 ## Icons
 
-This template provide at least 2 icon set with SVG assets:
+This repo provide at least 2 icon set with SVG assets:
 
 - [Lucide](https://lucide.dev)
 - [Iconoir](https://iconoir.com)
@@ -426,41 +400,6 @@ Recommended to use [Icones](https://icones.js.org) to search the icon names easi
 ## Tailwind CSS Config
 
 Use [uicolors.app](https://uicolors.app/create) or [tints.dev](https://tints.dev) to generate the color tokens easily. Then replace what's inside `tailwind.config.js`.
-
-```js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        brand: {
-          50: "#f2f9fd",
-          100: "#e5f1f9",
-          200: "#c5e2f2",
-          300: "#92cae7",
-          400: "#57aed9",
-          500: "#3399cc",
-          600: "#2277a7",
-          700: "#1d6087",
-          800: "#1b5171",
-          900: "#1c445e",
-        },
-        surface: {
-          50: "#f4f8f9",
-          100: "#dce7eb",
-          200: "#b8ced7",
-          300: "#8dacbb",
-          400: "#65899c",
-          500: "#4b6e81",
-          600: "#3a5667",
-          700: "#324653",
-          800: "#2b3944",
-          900: "#0a0d0f",
-        },
-      },
-    },
-  },
-};
-```
 
 ## Remix Entry Files
 
@@ -495,6 +434,7 @@ When running locally in development mode, use either the Express server or Verce
 ## General
 
 - [web.dev](https://web.dev)
+- [Rewinds Stack](https://rewinds.mhaidarhanif.com)
 - [Catamyst Stack](https://a.catamyst.com/stack)
   - [Catamyst Stack All](https://a.catamyst.com/stack-all)
 - [The Web’s Next Transition - Epic Web Dev by Kent C. Dodds](https://epicweb.dev/the-webs-next-transition)

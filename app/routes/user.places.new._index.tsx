@@ -29,7 +29,7 @@ import { InfoEmpty, SubmitDocument } from "~/icons";
 export const handle = createSitemap();
 
 export async function action({ request }: ActionArgs) {
-  const { userSession, user } = await requireUserSession(request);
+  const { userSession } = await requireUserSession(request);
 
   const formData = await request.formData();
   const submission = parse(formData, { schema: schemaPlaceNew });
@@ -45,7 +45,7 @@ export async function action({ request }: ActionArgs) {
     if (!newPlace) {
       return badRequest(submission);
     }
-    return redirect(`/${user.username}/${newPlace.slug}`);
+    return redirect(`/places/${newPlace.slug}`);
   } catch (error) {
     console.error(error);
     return serverError(submission);
@@ -113,11 +113,7 @@ export default function Route() {
               {...conform.input(description)}
               placeholder="Masukkan dekripsi masjid, termasuk kontak, alamat, dll. Maksimum 5000 karakter"
               rows={20}
-              defaultValue={
-                configDev.isDevelopment
-                  ? "Deskripsi masjid."
-                  : ""
-              }
+              defaultValue={configDev.isDevelopment ? "Deskripsi masjid." : ""}
               className="border-none px-1 sm:text-lg"
             />
             <Alert id={description.errorId}>{description.error}</Alert>

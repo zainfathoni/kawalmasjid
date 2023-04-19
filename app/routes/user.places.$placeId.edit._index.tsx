@@ -46,7 +46,7 @@ export async function loader({ request, params }: LoaderArgs) {
 }
 
 export async function action({ request, params }: ActionArgs) {
-  const { userSession, user } = await requireUserSession(request);
+  const { userSession } = await requireUserSession(request);
 
   const formData = await request.formData();
   const submission = parse(formData, { schema: schemaNoteUpdate });
@@ -63,7 +63,7 @@ export async function action({ request, params }: ActionArgs) {
     if (!result) {
       return badRequest(submission);
     }
-    return redirect(`/${user.username}/${newSlug}`);
+    return redirect(`/places/${newSlug}`);
   } catch (error) {
     console.error(error);
     return serverError(submission);

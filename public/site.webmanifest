@@ -1,7 +1,7 @@
 {
-  "name": "Rewinds",
-  "short_name": "Rewinds",
-  "description": "Web app starter kit with Remix and Tailwind",
+  "name": "Kawal Masjid",
+  "short_name": "Kawal Masjid",
+  "description": "Platform to inform Infaq Online Masjid seluruh Indonesia.",
   "start_url": "https://kawalmasj.id",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#38bef8",
+  "theme_color": "#3a9276",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
   "display": "standalone"

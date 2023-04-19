@@ -18,10 +18,10 @@ export const stylesheetLinks = [{ rel: "stylesheet", href: tailwindStyles }];
  */
 export const faviconLinks = [
   // Use this if you want to change the favicon quickly using emoji
-  {
-    rel: "shortcut icon",
-    href: "https://fav.farm/🕌",
-  },
+  // {
+  //   rel: "shortcut icon",
+  //   href: "https://fav.farm/🕌",
+  // },
   {
     rel: "shortcut icon",
     href: "/favicon.ico",

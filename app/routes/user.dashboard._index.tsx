@@ -32,7 +32,7 @@ export default function Route() {
           Dashboard
         </h1>
         <p>
-          <span>Dashboard for </span>
+          <span>Dashboard untuk </span>
           <RemixLinkText prefetch="intent" to={`/${user.username}`}>
             @{user.username}
           </RemixLinkText>
@@ -63,7 +63,7 @@ export default function Route() {
       </PageHeader>
 
       <section className="space-y-2">
-        <h2>Welcome, {user.name}!</h2>
+        <h2>Selamat datang, {user.name}!</h2>
       </section>
 
       <section>

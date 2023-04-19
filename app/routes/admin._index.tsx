@@ -35,7 +35,7 @@ export default function Route() {
       </PageAdminHeader>
 
       <section className="px-layout space-y-2">
-        <h2>Welcome, {user.name}!</h2>
+        <h2>Selamat datang, {user.name}!</h2>
         <p>
           Your role is <Badge>{user.role.name}</Badge>
         </p>

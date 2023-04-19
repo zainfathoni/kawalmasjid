@@ -57,7 +57,7 @@ export default function Route() {
 
         {users.length > 0 && (
           <div className="space-y-2">
-            <h4>Users</h4>
+            <h4>Pengguna</h4>
             <ul className="space-y-1">
               {users.map((user) => {
                 return (

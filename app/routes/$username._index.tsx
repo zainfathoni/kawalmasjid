@@ -82,10 +82,10 @@ export default function Route() {
               <img
                 className={cn(
                   "h-48 sm:h-60 md:h-72",
-                  "rounded-b-lg object-cover"
+                  "rounded-b-lg object-cover object-bottom"
                 )}
                 alt="User Cover"
-                src={`https://images.unsplash.com/photo-1571745544682-143ea663cf2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80`}
+                src={`https://images.unsplash.com/photo-1593117579800-806d62306514?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1569&q=80`}
                 height={240}
                 width={1440}
               />
@@ -110,7 +110,7 @@ export default function Route() {
               />
               {isOwner && (
                 <ButtonLink to="/user/settings" variant="outline" size="sm">
-                  Edit profile
+                  Ubah profil
                 </ButtonLink>
               )}
             </div>
@@ -127,9 +127,9 @@ export default function Route() {
           </section>
 
           <section className="space-y-2">
-            <h3>Notes</h3>
+            <h3>Data Masjid</h3>
             <ul className="space-y-2">
-              {user.notes.length <= 0 && <p>No notes yet.</p>}
+              {user.notes.length <= 0 && <p>Belum ada data masjid yang ditambahkan.</p>}
               {user.notes.map((note) => {
                 return (
                   <li key={note.id}>

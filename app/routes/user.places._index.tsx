@@ -55,11 +55,12 @@ export default function Route() {
       <PageHeader size="xs" withBackground={false} withContainer={false}>
         <div className="queue-center">
           <RemixLink to=".">
-            <h1>Places</h1>
+            <h1>Data masjid</h1>
+            <p>Semua yang telah ditambahkan</p>
           </RemixLink>
           <ButtonLink to="new" size="sm">
             <Plus className="size-sm" />
-            <span>Add Place</span>
+            <span>Tambah Masjid</span>
           </ButtonLink>
           {configDev.isDevelopment && (
             <RemixForm method="delete">
@@ -72,7 +73,7 @@ export default function Route() {
               >
                 <Trash className="size-sm" />
                 <span>
-                  Delete All My {formatPluralItems("Place", placesCount)}
+                  Hapus semua
                 </span>
               </Button>
             </RemixForm>
@@ -81,7 +82,7 @@ export default function Route() {
       </PageHeader>
 
       <section className="space-y-2">
-        <p>{formatPluralItems("place", placesCount)}</p>
+        <p>{placesCount} masjid</p>
         <ul className="space-y-1">
           {places.map((place) => {
             return (

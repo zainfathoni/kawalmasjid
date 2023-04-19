@@ -1,4 +1,4 @@
-# ⏪ Kawal Masjid Stack
+# 🕌 Kawal Masjid
 
 ![Kawal Masjid](https://raw.githubusercontent.com/zainfathoni/kawalmasjid/main/public/assets/screenshots/kawalmasjid-screenshot-light.png)
 
@@ -14,9 +14,9 @@
 
 # Introduction
 
-Kawal Masjid is a platform to inform Infaq Online Masjid seluruh Indonesia.
+🕌 Kawal Masjid is a platform to inform Infaq Online Masjid seluruh Indonesia.
 
-Made with [Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
+Made with [⏪ Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
 
 ## Live
 
@@ -29,7 +29,7 @@ Follow the progress on:
 
 # Tech Stack
 
-Listed here are only the most important parts in the stack.️ Some setup mostly finished, but some might haven't done yet or still in progress. More details and references can also be checked from [`catamyst/stack`](https://a.catamyst.com/stack).
+Listed here are only the most important parts in the stack.️ Some setup mostly finished, but some might haven't done yet or still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
 
 As a reminder:
 
@@ -481,15 +481,3 @@ When running locally in development mode, use either the Express server or Verce
 - [Saas UI - The React component library for Startups](https://saas-ui.dev)
 - [saasui.design](https://saasui.design)
 - [saasinterface.com](https://saasinterface.com)
-
-## Kawal Masjid in the wild
-
-Some other public repos/projects using Kawal Masjid:
-
-- [M Haidar Hanif Website](https://github.com/kawalmasjid/kawalmasjid-web): Personal Website
-- [Catamyst](https://github.com/catamyst/catamyst-web): Learning Management System (LMS)
-- [Super Duper Gallery](https://github.com/jonathannicolasdev/superduper): Art Gallery
-
-## What's next for the future?
-
-Repackage this as [@catamyst/ui] or [@catamyst/rewinds-ui]

@@ -47,27 +47,27 @@ export default function Route() {
       containSize="sm"
       layoutHeader={
         <PageHeader
-          size="xs"
+          size="sm"
           containSize="sm"
           withContainer={false}
           withBackground={false}
           withMarginBottom={false}
         >
-          <h1>Search results</h1>
+          <h1>Hasil pencarian</h1>
           <h2>
-            <span>{formatPluralItems("result", itemsCount)}</span>
-            {q && <span> with keyword: {q}</span>}
-            {!q && <span> with no specific keyword</span>}
+            <span>{itemsCount} hasil</span>
+            {q && <span> dengan kata kunci: {q}</span>}
+            {!q && <span> tanpa kata kunci spesifik</span>}
           </h2>
         </PageHeader>
       }
     >
       <section className="space-y-4">
-        {itemsCount <= 0 && <h3>Sorry, nothing found.</h3>}
+        {itemsCount <= 0 && <h3>Maaf, tidak ditemukan.</h3>}
 
         {places.length > 0 && (
           <div className="space-y-2">
-            <span>Places</span>
+            <span>Masjid</span>
             <ul className="space-y-1">
               {places.map((place) => {
                 return (

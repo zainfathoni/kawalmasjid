@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-require("dayjs/locale/en");
+require("dayjs/locale/id");
 
 dayjs.extend(relativeTime);
 
@@ -16,19 +16,19 @@ export function getCurrentYear() {
  */
 
 export function formatDateTime(date: string | Date | undefined) {
-  return dayjs(date).locale("en").format("H:mm [on] D MMM YYYY");
+  return dayjs(date).locale("id").format("H:mm [on] D MMM YYYY");
 }
 
 export function formatDateTimeTimezone(date: string | Date | undefined) {
-  return dayjs(date).locale("en").format("D MMM YYYY, H:mm:ss Z");
+  return dayjs(date).locale("id").format("D MMM YYYY, H:mm:ss Z");
 }
 
 export function formatDate(date: string | Date | undefined) {
-  return dayjs(date).locale("en").format("D MMM YYYY");
+  return dayjs(date).locale("id").format("D MMM YYYY");
 }
 
 export function formatDateLastMod(date: string | Date | undefined) {
-  return dayjs(date).locale("en").format("YYYY-MM-DD");
+  return dayjs(date).locale("id").format("YYYY-MM-DD");
 }
 
 /**
@@ -36,7 +36,7 @@ export function formatDateLastMod(date: string | Date | undefined) {
  */
 
 export function formatRelativeTime(date: string | Date | undefined) {
-  return dayjs(date).locale("en").fromNow();
+  return dayjs(date).locale("id").fromNow();
 }
 
 /**

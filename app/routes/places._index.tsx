@@ -51,14 +51,13 @@ export default function Route() {
           withBackground={false}
           withMarginBottom={false}
         >
-          <h1>All {formatPluralItems("place", placesCount)}</h1>
+          <h1>Semua masjid ({placesCount})</h1>
           <p>
-            Published places from the users. Frequently changed or reset for
-            this example demo.
+            Seluruh data masjid yang telah dikumpulkan.
           </p>
           <ButtonLink to="/new" size="sm">
             <Plus className="size-sm" />
-            <span>Add Place</span>
+            <span>Tambah Masjid</span>
           </ButtonLink>
         </PageHeader>
       }

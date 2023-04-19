@@ -6,7 +6,7 @@ const isUsingHMR = Boolean(process.env.USE_HMR) || false;
 
 // to show environent condition
 console.info({
-  message: `⏪ Kawal Masjid is running`,
+  message: `🕌 Aplikasi Kawal Masjid sedang berjalan`,
   NODE_ENV: process.env.NODE_ENV,
 });
 

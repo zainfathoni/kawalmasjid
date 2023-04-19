@@ -56,8 +56,8 @@ export const configMeta = {
   ogType: "website",
   ogImageAlt: configSite?.title,
   ogImageType: "image/png",
-  ogImagePath: "/assets/opengraph/rewinds-og.png",
-  twitterImagePath: "/assets/opengraph/rewinds-og.png",
+  ogImagePath: "/assets/opengraph/kawalmasjid-og.png",
+  twitterImagePath: "/assets/opengraph/kawalmasjid-og.png",
   fbAppId: "",
 
   author: {

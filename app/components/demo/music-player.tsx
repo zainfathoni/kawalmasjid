@@ -482,7 +482,7 @@ export function MusicPlayerDemo() {
                         >
                           <Avatar>
                             <AvatarImage
-                              src="https://github.com/mhaidarhanif.png"
+                              src="https://github.com/kawalmasjid.png"
                               alt="M Haidar Hanif"
                             />
                             <AvatarFallback>MH</AvatarFallback>

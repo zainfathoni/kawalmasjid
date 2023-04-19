@@ -51,7 +51,7 @@ export async function seedUsers() {
     data: {
       email: REMIX_ADMIN_EMAIL,
       password: { create: { hash: hashedPassword } },
-      name: "Rewinds Admin",
+      name: "Kawal Masjid Admin",
       username: "administrator",
       phone: "+1234567890",
       role: { connect: { id: adminUserRole.id } },

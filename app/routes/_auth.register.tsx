@@ -33,7 +33,7 @@ import type { z } from "zod";
 
 export const meta: V2_MetaFunction = () => {
   return createMetaData({
-    title: "Register for Rewinds",
+    title: "Register for Kawal Masjid",
     description: "Create your new account to join the adventure.",
   });
 };

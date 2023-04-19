@@ -171,7 +171,9 @@ export function ErrorBoundary() {
             <p>{message}</p>
           </PageAdminHeader>
           <section className="px-layout space-y-2">
-            <p>Here's the error information that can be informed to Rewinds.</p>
+            <p>
+              Here's the error information that can be informed to Kawal Masjid.
+            </p>
             <Debug name="error.data" isAlwaysShow>
               {error.data}
             </Debug>
@@ -187,7 +189,9 @@ export function ErrorBoundary() {
             <h1>Error from {configSite.name}</h1>
           </PageAdminHeader>
           <section className="px-layout space-y-2">
-            <p>Here's the error information that can be informed to Rewinds.</p>
+            <p>
+              Here's the error information that can be informed to Kawal Masjid.
+            </p>
 
             <pre>{error.message}</pre>
             <Debug name="error" isAlwaysShow>

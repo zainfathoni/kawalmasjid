@@ -8,31 +8,29 @@ import { configDev } from "~/configs";
 
 // For general
 export const configSite = {
-  domain: configDev.isDevelopment
-    ? "localhost:3000"
-    : "rewinds.mhaidarhanif.com",
+  domain: configDev.isDevelopment ? "localhost:3000" : "kawalmasj.id",
 
   slug: "rewinds",
-  name: "Rewinds",
-  title: "Rewinds: Remix Tailwind Starter Kit",
+  name: "Kawal Masjid",
+  title: "Kawal Masjid: Infaq Online Masjid seluruh Indonesia",
   description:
-    "Rewinds is a web app starter kit with Remix, Tailwind CSS, Radix UI, and their ecosystem. Made by @mhaidarhanif.",
+    "Kawal Masjid berusaha menghalau pemalsuan/penggantian QR code di kotak amal masjid.",
 
   links: {
-    website: "https://mhaidarhanif.com",
-    github: "https://github.com/mhaidarhanif/rewinds",
-    twitter: "https://twitter.com/mhaidarhanif",
-    youtube: "https://youtube.com/mhaidarhanif",
-    facebook: "https://facebook.com/mhaidarhanif",
-    instagram: "https://instagram.com/mhaidarhanif_",
-    devTo: "https://dev.to/mhaidarhanif",
-    hashnode: "https://hashnode.com/mhaidarhanif",
-    showwcase: "https://showwcase.com/mhaidarhanif",
+    website: "https://kawalmasj.id",
+    github: "https://github.com/zainfathoni/kawalmasjid",
+    twitter: "https://twitter.com/kawalmasjid",
+    youtube: "https://youtube.com/kawalmasjid",
+    facebook: "https://facebook.com/kawalmasjid",
+    instagram: "https://instagram.com/kawalmasjid",
+    devTo: "https://dev.to/kawalmasjid",
+    hashnode: "https://hashnode.com/kawalmasjid",
+    showwcase: "https://showwcase.com/kawalmasjid",
   },
 
   twitter: {
-    site: "@mhaidarhanif",
-    creator: "@mhaidarhanif",
+    site: "@kawalmasjid",
+    creator: "@kawalmasjid",
   },
 
   navItems: [
@@ -65,13 +63,13 @@ export const configMeta = {
   fbAppId: "",
 
   author: {
-    name: "M Haidar Hanif",
-    handle: "@mhaidarhanif",
-    url: "https://mhaidarhanif.com",
+    name: "Kawal Masjid",
+    handle: "@kawalmasjid",
+    url: "https://kawalmasj.id",
     company: {
-      name: "Catamyst",
-      handle: "@catamyst",
-      url: "https://catamyst.com",
+      name: "Kawal Masjid",
+      handle: "@kawalmasjid",
+      url: "https://kawalmasj.id",
     },
   },
 

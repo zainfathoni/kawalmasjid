@@ -27,21 +27,21 @@ export default function Route() {
     <Layout className="contain-sm space-y-20">
       <article className="prose-config mt-10">
         <h1>
-          <Balancer>About the Remix starter kit called Rewinds</Balancer>
+          <Balancer>About the Remix starter kit called Kawal Masjid</Balancer>
         </h1>
         {user && <p>Hello {user.name}.</p>}
         <p>
           This about page is to showcase the prose styles from Tailwind CSS
           Typography. This template is originally made by{" "}
-          <Anchor href="https://mhaidarhanif.com">M Haidar Hanif</Anchor> in
+          <Anchor href="https://kawalmasj.id">M Haidar Hanif</Anchor> in
           conjunction with <Anchor href="https://catamyst.com">Catamyst</Anchor>{" "}
           and its tech stack for various projects.
         </p>
         <p>
-          As informed on the landing page, Rewinds is a Remix Tailwind Stack
-          with Tailwind CSS family of libraries, interactive components, and the
-          TypeScript ecosystem. Compared to the{" "}
-          <Anchor href="https://github.com/mhaidarhanif/rewinds-legacy">
+          As informed on the landing page, Kawal Masjid is a Remix Tailwind
+          Stack with Tailwind CSS family of libraries, interactive components,
+          and the TypeScript ecosystem. Compared to the{" "}
+          <Anchor href="https://github.com/zainfathoni/kawalmasjid-legacy">
             the older <code>rewinds</code>
           </Anchor>{" "}
           this newer version uses{" "}
@@ -117,7 +117,7 @@ export default function Route() {
           delectus porro rerum tempora, cumque vero, reprehenderit, fugit
           eligendi minus mollitia sint.
         </p>
-        <p>Alright, this should be it! Let's use Rewinds.</p>
+        <p>Alright, this should be it! Let's use Kawal Masjid.</p>
       </article>
 
       <PageProgress />

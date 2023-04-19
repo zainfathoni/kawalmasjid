@@ -149,7 +149,7 @@ export function createMetaData({
       "script:ld+json": {
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "Rewinds",
+        name: "Kawal Masjid",
       },
     },
   ];

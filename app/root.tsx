@@ -225,7 +225,9 @@ export function ErrorBoundary() {
           }
         >
           <div>
-            <p>Here's the error information that can be informed to Rewinds.</p>
+            <p>
+              Here's the error information that can be informed to Kawal Masjid.
+            </p>
             <Debug name="error.data" isAlwaysShow>
               {error.data}
             </Debug>
@@ -246,7 +248,9 @@ export function ErrorBoundary() {
           }
         >
           <div>
-            <p>Here's the error information that can be informed to Rewinds.</p>
+            <p>
+              Here's the error information that can be informed to Kawal Masjid.
+            </p>
 
             <p>{error.message}</p>
             <Debug name="error" isAlwaysShow>

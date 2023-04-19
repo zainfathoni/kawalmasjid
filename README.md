@@ -1,6 +1,6 @@
-# ⏪ Rewinds Stack
+# ⏪ Kawal Masjid Stack
 
-![The Rewinds Stack](https://raw.githubusercontent.com/mhaidarhanif/rewinds/main/public/assets/screenshots/rewinds-screenshot-dark.png)
+![The Kawal Masjid Stack](https://raw.githubusercontent.com/zainfathoni/kawalmasjid/main/public/assets/screenshots/rewinds-screenshot-dark.png)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Remix](https://img.shields.io/badge/Remix-000000?style=flat-square&logo=remix&logoColor=white)
@@ -10,15 +10,15 @@
 ![Prisma ORM](https://img.shields.io/badge/Prisma_ORM-2D3748?style=flat-square&logo=prisma&logoColor=white)
 ![PlanetScale](https://img.shields.io/badge/PlanetScale-000000?style=flat-square&logo=planetscale&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-[![Better Uptime](https://betteruptime.com/status-badges/v1/monitor/enmd.svg)](https://uptime.mhaidarhanif.com/?utm_source=status_badge)
+[![Better Uptime](https://betteruptime.com/status-badges/v1/monitor/enmd.svg)](https://uptime.kawalmasjid.com/?utm_source=status_badge)
 
 # Introduction
 
-Rewinds is a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities for your Remix project.
+Kawal Masjid is a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities for your Remix project.
 
 ## Goals
 
-You can use this to build any web apps (also what I'm using Rewinds for):
+You can use this to build any web apps (also what I'm using Kawal Masjid for):
 
 - Personal Website
 - Company Profile
@@ -41,29 +41,17 @@ You can use this to build any web apps (also what I'm using Rewinds for):
 
 ## Demos
 
-Visit [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
+Visit [kawalmasj.id](https://kawalmasj.id)
 
 Follow the progress on:
 
-- GitHub: [@mhaidarhanif](https://github.com/mhaidarhanif)
-- Twitter: [@mhaidarhanif](https://twitter.com/mhaidarhanif)
-
-## Quick start
-
-Starting a new project? You can clone or create a Remix app with this template:
-
-```sh
-npx create-remix@latest --template mhaidarhanif/rewinds
-```
-
-Faster? Deploy this template to Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmhaidarhanif%2Frewinds&env=DATABASE_URL,REMIX_SESSION_SECRET,REMIX_APP_NAME,REMIX_APP_EMAIL&project-name=my-rewinds-app&repository-name=my-rewinds-app&demo-title=Rewinds&demo-description=A%20starter%20kit%20with%20Remix%2C%20Tailwind%20CSS%2C%20and%20the%20TypeScript%20ecosystem.&demo-url=https%3A%2F%2Frewinds.mhaidarhanif.com&demo-image=https%3A%2F%2Frewinds.mhaidarhanif.com%2Fassets%2Fimages%2Fcat-study-dark.png)
+- GitHub: [@kawalmasjid](https://github.com/kawalmasjid)
+- Twitter: [@kawalmasjid](https://twitter.com/kawalmasjid)
 
 ## Code repository and links
 
-- [mhaidarhanif/rewinds](https://github.com/mhaidarhanif/rewinds)
-- [rewinds.mhaidarhanif.com](https://rewinds.mhaidarhanif.com)
+- [zainfathoni/kawalmasjid](https://github.com/zainfathoni/kawalmasjid)
+- [kawalmasj.id](https://kawalmasj.id)
 - [rewinds.vercel.app](https://rewinds.vercel.app)
 - [rewinds.dev](https://rewinds.dev) (sooner or later)
 
@@ -77,11 +65,11 @@ As a reminder:
 
 ## Primary Tech Stack
 
-- Rewinds: Remix Tailwind Stack
+- Kawal Masjid: Remix Tailwind Stack
 - TRIP: TypeScript/Tailwind Remix/React/Radix Interface Prisma
   - VPS: Vercel PlanetScale
 
-These are also the primary prerequisites for you to learn, understand, and use with this Rewinds stack. (Architecture diagram can help later on here)
+These are also the primary prerequisites for you to learn, understand, and use with this Kawal Masjid stack. (Architecture diagram can help later on here)
 
 ## Complete Tech Stack
 
@@ -94,7 +82,7 @@ Legends:
 - 🎉 = 3rd party service or platform
 - 🚧 = still not there yet or still in development
 
-Already setup in Rewinds and some are for alternatives:
+Already setup in Kawal Masjid and some are for alternatives:
 
 - Core
   - [Node.js](https://nodejs.org) 🧰
@@ -162,7 +150,7 @@ Already setup in Rewinds and some are for alternatives:
 
 ## Extra Tech Stack
 
-Although these are not included in Rewinds, if you need a separate backend/server/service, here are the recommendations:
+Although these are not included in Kawal Masjid, if you need a separate backend/server/service, here are the recommendations:
 
 - Core/API
   - REST
@@ -257,7 +245,7 @@ Included setup for the developers:
   - [x] Root loader data for env, theme, user, etc
   - [x] Cache header
 - [x] No need for CLS loading screens/skeletons, only loading bar on top and loading button state
-- [x] Lighthouse or [Pagespeed Insights](https://pagespeed.web.dev/analysis/https-rewinds-mhaidarhanif-com/hbkn7kmahh?form_factor=desktop) optimized
+- [x] Lighthouse or [Pagespeed Insights](https://pagespeed.web.dev/analysis/https-rewinds-kawalmasjid-com/hbkn7kmahh?form_factor=desktop) optimized
 - [x] pnpm, Prettier, ESLint, Stylelint, and much more
   - [x] No lint and type errors!
   - [x] Organize import order
@@ -514,7 +502,7 @@ As there's not yet an official way to handle SEO related output for metadata and
 
 ## HMR Workaround
 
-> This setup has been done in this Rewinds template.
+> This setup has been done in this Kawal Masjid template.
 
 To enable HMR, at least as per Remix `v1.14`, when not primarily using Express server only (like using Vercel and another server), we have to a separate Express server. If using pnpm, you also have to install `react-refresh` to resolve the HMR dependency:
 
@@ -576,11 +564,11 @@ When running locally in development mode, use either the Express server or Verce
 - [saasui.design](https://saasui.design)
 - [saasinterface.com](https://saasinterface.com)
 
-## Rewinds in the wild
+## Kawal Masjid in the wild
 
-Some other public repos/projects using Rewinds:
+Some other public repos/projects using Kawal Masjid:
 
-- [M Haidar Hanif Website](https://github.com/mhaidarhanif/mhaidarhanif-web): Personal Website
+- [M Haidar Hanif Website](https://github.com/kawalmasjid/kawalmasjid-web): Personal Website
 - [Catamyst](https://github.com/catamyst/catamyst-web): Learning Management System (LMS)
 - [Super Duper Gallery](https://github.com/jonathannicolasdev/superduper): Art Gallery
 

@@ -21,7 +21,7 @@ export default function Route() {
         <div className="max-w-lg space-y-4">
           <div className="prose-config">
             <h1 className="text-xl">
-              <span>Rewinds, </span>
+              <span>Kawal Masjid, </span>
               <br className="block sm:hidden" />
               <span>a Remix Stack</span>
             </h1>
@@ -29,17 +29,14 @@ export default function Route() {
               <PeaceHand className="inline-icon link" />
               {user ? <span>Hey {user.name}, </span> : <span>Hey, </span>}
               <span>it's just another web app starter kit made by </span>
-              <AnchorText
-                href="https://mhaidarhanif.com"
-                className="inline-block"
-              >
+              <AnchorText href="https://kawalmasj.id" className="inline-block">
                 M Haidar Hanif
               </AnchorText>
               <span> that also has real world functionalities.</span>
             </p>
             <p>
-              <CompactDisc className="inline-icon link" /> Rewinds is a Remix
-              Tailwind Stack with Tailwind CSS family of libraries, React
+              <CompactDisc className="inline-icon link" /> Kawal Masjid is a
+              Remix Tailwind Stack with Tailwind CSS family of libraries, React
               components, along with the JavaScript, TypeScript, and Node.js
               ecosystem.
             </p>

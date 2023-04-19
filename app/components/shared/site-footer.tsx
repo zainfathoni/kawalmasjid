@@ -31,7 +31,7 @@ export function SiteFooter({ noThemeToggle }: Props) {
                 href={configSite?.links.github}
                 className="py-3 sm:py-0"
               >
-                <TextCode>mhaidarhanif/rewinds</TextCode>
+                <TextCode>zainfathoni/kawalmasjid</TextCode>
               </AnchorText>
             </li>
             <li>

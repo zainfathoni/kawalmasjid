@@ -2,6 +2,7 @@ _*.md
 .cache
 .DS_Store
 .env
+.env.staging
 .env*.local
 .output
 .pnp.js

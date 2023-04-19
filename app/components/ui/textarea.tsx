@@ -9,7 +9,7 @@ import { cn } from "~/utils";
  */
 
 export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {

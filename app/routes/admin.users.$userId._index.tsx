@@ -138,7 +138,9 @@ export default function Route() {
 
       <section>
         <h5>Notes</h5>
-        {user.notes.length <= 0 && <span>Belum ada data masjid yang ditambahkan.</span>}
+        {user.notes.length <= 0 && (
+          <span>Belum ada data masjid yang ditambahkan.</span>
+        )}
         {user.notes.length > 0 && (
           <ul className="space-y-1">
             {user.notes.map((note) => {

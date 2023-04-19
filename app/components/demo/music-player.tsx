@@ -732,7 +732,7 @@ function AlbumArtwork({
   );
 }
 
-interface DemoIndicatorProps extends React.HTMLAttributes<HTMLSpanElement> { }
+interface DemoIndicatorProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
 export function DemoIndicator({ className }: DemoIndicatorProps) {
   return (

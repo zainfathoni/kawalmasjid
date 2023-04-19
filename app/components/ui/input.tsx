@@ -12,7 +12,7 @@ import { Button } from "~/components";
  */
 
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> { }
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type = "text", ...props }, ref) => {

@@ -14,7 +14,7 @@ import { requireUserSession } from "~/helpers";
 import { Plus, Trash } from "~/icons";
 import { prisma } from "~/libs";
 import { model } from "~/models";
-import { createSitemap, formatPluralItems } from "~/utils";
+import { createSitemap } from "~/utils";
 import { truncateText } from "~/utils";
 
 import type { LoaderArgs } from "@remix-run/node";
@@ -72,9 +72,7 @@ export default function Route() {
                 disabled={placesCount <= 0}
               >
                 <Trash className="size-sm" />
-                <span>
-                  Hapus semua
-                </span>
+                <span>Hapus semua</span>
               </Button>
             </RemixForm>
           )}

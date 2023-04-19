@@ -129,7 +129,9 @@ export default function Route() {
           <section className="space-y-2">
             <h3>Data Masjid</h3>
             <ul className="space-y-2">
-              {user.notes.length <= 0 && <p>Belum ada data masjid yang ditambahkan.</p>}
+              {user.notes.length <= 0 && (
+                <p>Belum ada data masjid yang ditambahkan.</p>
+              )}
               {user.notes.map((note) => {
                 return (
                   <li key={note.id}>

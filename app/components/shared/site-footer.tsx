@@ -1,10 +1,4 @@
-import {
-  Anchor,
-  AnchorText,
-  ButtonIconAnchor,
-  TextCode,
-  ThemeToggleDropdownMenu,
-} from "~/components";
+import { ButtonIconAnchor, ThemeToggleDropdownMenu } from "~/components";
 import { configMeta, configSite } from "~/configs";
 import { Github, Twitter } from "~/icons";
 import { cn, getCurrentYear } from "~/utils";

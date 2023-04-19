@@ -43,10 +43,7 @@ export async function loader({ request }: LoaderArgs) {
     successRedirect: "/places",
   });
 
-  const headerHeadingText = getRandomText([
-    "Halo!",
-    "Selamat datang kembali",
-  ]);
+  const headerHeadingText = getRandomText(["Halo!", "Selamat datang kembali"]);
 
   const headerDescriptionText = getRandomText([
     `Lanjut ke ${configSite.name}`,

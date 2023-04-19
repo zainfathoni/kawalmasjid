@@ -14,7 +14,6 @@ import {
   Label,
   RemixForm,
   TextArea,
-  TooltipAuto,
 } from "~/components";
 import { configDev } from "~/configs";
 import { requireUserSession } from "~/helpers";
@@ -91,7 +90,9 @@ export default function Route() {
               autoFocus
               type="text"
               placeholder="Nama masjid"
-              defaultValue={configDev.isDevelopment ? "Masjid Istiqlal Jakarta Pusat" : ""}
+              defaultValue={
+                configDev.isDevelopment ? "Masjid Istiqlal Jakarta Pusat" : ""
+              }
               className="border-none px-1 text-lg sm:text-xl md:text-2xl lg:text-3xl"
             />
             <Alert id={name.errorId}>{name.error}</Alert>

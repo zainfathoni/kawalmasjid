@@ -8,7 +8,6 @@ import {
   createCacheHeaders,
   createMetaData,
   createSitemap,
-  formatPluralItems,
   formatRelativeTime,
   getAllSearchQuery,
   truncateText,

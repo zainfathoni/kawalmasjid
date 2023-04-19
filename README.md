@@ -12,13 +12,13 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 [![Better Uptime](https://betteruptime.com/status-badges/v1/monitor/enmd.svg)](https://uptime.kawalmasjid.com/?utm_source=status_badge)
 
-# Introduction
+## Introduction
 
 🕌 Kawal Masjid is a platform to inform Infaq Online Masjid seluruh Indonesia.
 
 Made with [⏪ Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
 
-## Live
+### Live
 
 Visit [kawalmasj.id](https://kawalmasj.id)
 
@@ -27,7 +27,7 @@ Follow the progress on:
 - Twitter: [@kawalmasjid](https://twitter.com/kawalmasjid)
 - GitHub: [kawalmasjid](https://github.com/zainfathoni/kawalmasjid)
 
-# Tech Stack
+## Tech Stack
 
 Listed here are only the most important parts in the stack.️ Some setup mostly finished, but some might haven't done yet or still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
 
@@ -35,7 +35,7 @@ As a reminder:
 
 > "Software is a just a tool to help accomplish something for people - many programmers never understood that. Keep your eyes on the delivered value, and don’t over focus on the specifics of the tools" — John Carmack
 
-## Primary Tech Stack
+### Primary Tech Stack
 
 - Remix and Tailwind
 - TRIP: TypeScript/Tailwind Remix/React/Radix Interface Prisma
@@ -43,7 +43,7 @@ As a reminder:
 
 These are also the primary prerequisites for you to learn, understand, and use with this Kawal Masjid stack. (Architecture diagram can help later on here)
 
-## Complete Tech Stack
+### Complete Tech Stack
 
 The complete stack includes TypeScript, Remix & Remix Auth, React, Tailwind CSS, Radix UI, Zod, Conform, Prisma ORM, PlanetScale, and Vercel. But this repo also attempt to learn from Next.js, tRPC, GraphQL, NestJS, Passport, Swagger (OpenAPI), and others as well.
 
@@ -110,7 +110,7 @@ Already setup in Kawal Masjid and some are for alternatives:
 
 [Check the GUIDE.md](./GUIDE.md) if you need some guide into the project setup, structure, and files.
 
-## Extra Tech Stack
+### Extra Tech Stack
 
 Although these are not included in Kawal Masjid, if there is a need for a separate backend/server/service, here are the recommendations:
 
@@ -141,9 +141,9 @@ Although these are not included in Kawal Masjid, if there is a need for a separa
   - [Google Cloud Platform](https://cloud.google.com)
   - [Amazon Web Services](https://aws.amazon.com)
 
-# Some More Info
+## Some More Info
 
-## Some Roadmap or Checklists
+### Some Roadmap or Checklists
 
 Included features for the users:
 
@@ -219,9 +219,9 @@ Recommended extra setup:
 - Connect to Highlight to report and analyze errors.
 - Use [Google Search Console](https://search.google.com/search-console/about) to check the sitemap and SERP-related stuffs.
 
-# Development
+## Development
 
-## Install Dependencies
+### Install Dependencies
 
 Before running your Remix app locally, make sure your project's local dependencies are installed using your preferred package manager agent:
 
@@ -237,7 +237,7 @@ pnpm add -g @antfu/ni  # install once
 ni                     # can auto choose npm/yarn/pnpm
 ```
 
-## Setup Environment Variables/Secrets
+### Setup Environment Variables/Secrets
 
 Use plain `.env` file for local development:
 
@@ -260,7 +260,7 @@ doppler secrets download --no-file --format env > .env
 
 > ⚠️ Make sure to setup the environment variables/secrets here, on Vercel, or on your preferred deployment target. Otherwise the app will break on production. That's why Doppler or Dotenv are recommended to manage them easily. There are also some preset strings in the `.env.example` which you can copy directly.
 
-## Prisma ORM and Database Connection
+### Prisma ORM and Database Connection
 
 It's up to you which database/DBMS you want to use with the app that supported by Prisma ORM. This repo is suited to use either your own MySQL instance or MySQL on PlanetScale. But we don't use SQLite because it doesn't have `@db.Text` annotation and `model.createMany()` function.
 
@@ -284,7 +284,7 @@ While in development, you can:
 - Push Prisma schema changes for PlanetScale with `nr prisma:push` (it runs `prisma db push`)
   - You might notice that with [PlanetScale](https://planetscale.com/docs/tutorials/prisma-quickstart) approach with [Prisma](https://prisma.io/docs/guides/database/using-prisma-with-planetscale), we don't need migration files in our repo, rather managed in their platform.
 
-## Run Development Server
+### Run Development Server
 
 Make sure you've generated the latest Prisma schema with `nr prisma:generate`.
 
@@ -318,7 +318,7 @@ Loading environment variables from .env
 
 Open up <http://localhost:3000> and you should be ready to go!
 
-## TypeScript and ESLint Server
+### TypeScript and ESLint Server
 
 When you update some significant changes in the TypeScript config, ESLint config, or just generated a new Prisma schema, you can restart the language server as needed:
 
@@ -328,7 +328,7 @@ When you update some significant changes in the TypeScript config, ESLint config
 > Prisma: Restart Language Server
 ```
 
-# Deployment
+## Deployment
 
 ## Vercel
 
@@ -386,9 +386,9 @@ vercel
 
 It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
 
-# Important Notes
+## Important Notes
 
-## Icons
+### Icons
 
 This repo provide at least 2 icon set with SVG assets:
 
@@ -397,11 +397,11 @@ This repo provide at least 2 icon set with SVG assets:
 
 Recommended to use [Icones](https://icones.js.org) to search the icon names easily.
 
-## Tailwind CSS Config
+### Tailwind CSS Config
 
 Use [uicolors.app](https://uicolors.app/create) or [tints.dev](https://tints.dev) to generate the color tokens easily. Then replace what's inside `tailwind.config.js`.
 
-## Remix Entry Files
+### Remix Entry Files
 
 This repo already has the entry files. Since Remix `v1.14`, you might notice that the entry files might be able to be implicitly defined. At the moment, I still suggest revealing or explicitly defining them to make it work smoothly.
 
@@ -409,7 +409,7 @@ This repo already has the entry files. Since Remix `v1.14`, you might notice tha
 npx remix reveal
 ```
 
-## Remix SEO Configuration
+### Remix SEO Configuration
 
 As there's not yet an official way to handle SEO related output for metadata and sitemap, here are the options ordered by preference:
 
@@ -417,7 +417,7 @@ As there's not yet an official way to handle SEO related output for metadata and
 2. [`chaance/remix-seo`](https://github.com/chaance/remix-seo): A package for easily managing SEO meta and link tags in Remix
 3. [`fedeya/remix-sitemap`](https://github.com/fedeya/remix-sitemap): Sitemap generator for Remix applications
 
-## HMR Workaround
+### HMR Workaround
 
 > This setup has been done in this Kawal Masjid template.
 
@@ -429,9 +429,9 @@ ni -D react-refresh
 
 When running locally in development mode, use either the Express server or Vercel. This by default does not understand the Vercel lambda module format, so we fall back to the standard build output.
 
-# References
+## References
 
-## General
+### General
 
 - [web.dev](https://web.dev)
 - [Rewinds Stack](https://rewinds.mhaidarhanif.com)
@@ -441,7 +441,7 @@ When running locally in development mode, use either the Express server or Verce
 - [Infra I'm Building On In 2023 - T3](https://t3.gg/blog/post/2023-infra)
   - [The Infra That Saved Me From AWS - My 2023 Stack](https://youtube.com/watch?v=v-9AZKp-Ljo)
 
-## Remix
+### Remix
 
 - [Remix Docs](http://remix.run)
 - [Remix Blog Tutorial](http://remix.run/docs/en/main/tutorials/blog)
@@ -449,20 +449,20 @@ When running locally in development mode, use either the Express server or Verce
 - [Build a Fullstack App with Remix and Prisma - Prisma YouTub Playlist](https://youtube.com/watch?v=4tXGRe5CDDg&list=PLn2e1F9Rfr6kPDIAbfkOxgDLf4N3bFiMn)
 - [Build a Fullstack App with Remix and Prisma - Prisma Blog](https://prisma.io/blog/fullstack-remix-prisma-mongodb-1-7D0BfTXBmB6r)
 
-## React
+### React
 
 - [React](https://react.dev)
 - [Rethinking React best practices - Frontend Mastery](https://frontendmastery.com/posts/rethinking-react-best-practices)
 - [Bulletproof React - A simple, scalable, and powerful architecture for building production-ready React applications](https://github.com/alan2207/bulletproof-react)
 
-## Tailwind CSS
+### Tailwind CSS
 
 - [Tailwind CSS](https://tailwindcss.com)
 - [Why we use Tailwind CSS as our primary framework | Clean Commit](https://cleancommit.io/blog/why-we-use-tailwind-css-as-our-primary-framework)
 - [An Honest Look at Tailwind as an API for CSS | thoughtbot, inc.](https://thoughtbot.com/blog/an-honest-look-at-tailwind-as-an-api-for-css)
 - [Styling Best Practices I Use With Tailwind CSS | theodorusclarence.com](https://theodorusclarence.com/blog/tailwindcss-best-practice)
 
-## Inspirations
+### Inspirations
 
 - [Design System Checklist](https://designsystemchecklist.com)
 - [shadcn UI](https://github.com/shadcn/ui)

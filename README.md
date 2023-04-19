@@ -229,7 +229,7 @@ Included setup for the developers:
     - [x] Iconir
     - [ ] Bring your own favorite
 - [x] Database with Prisma ORM and MySQL on PlanetScale
-  - [x] GraphQL/tRPC-style file models structure
+  - [x] tRPC-style or GraphQL-style data models file structure
 - [x] Data validation with Zod for general and Zodix for Remix loader/action
 - [x] Form handling with Conform
   - [x] Check for unallowed usernames

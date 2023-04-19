@@ -24,23 +24,6 @@ export function SiteFooter({ noThemeToggle }: Props) {
     >
       <section className="contain flex flex-wrap items-end gap-4 sm:justify-between">
         <div className="space-y-4">
-          <ul className="space-y-2">
-            <li>
-              <span>Repo: </span>
-              <AnchorText
-                href={configSite?.links.github}
-                className="py-3 sm:py-0"
-              >
-                <TextCode>zainfathoni/kawalmasjid</TextCode>
-              </AnchorText>
-            </li>
-            <li>
-              <span>Demo: </span>
-              <AnchorText href={configMeta?.url} className="py-3 sm:py-0">
-                {configSite?.domain}
-              </AnchorText>
-            </li>
-          </ul>
           <p className="opacity-80">
             <span>Copyright &copy; </span>
             <span>{getCurrentYear()} </span>

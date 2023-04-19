@@ -1,5 +1,8 @@
 /**
  * EDITME: Config Fonts
+ *
+ * Docs:
+ * - https://fontsource.org
  */
 
 import brandFontStyles from "@fontsource/archivo/600.css";

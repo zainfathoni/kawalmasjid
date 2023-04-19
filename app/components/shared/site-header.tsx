@@ -144,7 +144,7 @@ export function HeaderMainButtons() {
             </ButtonLink>
 
             <ButtonLink to="/register" variant="subtle">
-              Register
+              Registrasi
             </ButtonLink>
           </>
         )}

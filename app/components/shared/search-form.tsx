@@ -10,7 +10,7 @@ export function SearchForm({ action = "/search" }: { action?: string }) {
         <Input
           name="q"
           type="search"
-          placeholder="Search..."
+          placeholder="Cari masjid..."
           autoComplete="off"
           className="block w-full ps-9 placeholder:text-surface-500 dark:placeholder:text-surface-400"
         />

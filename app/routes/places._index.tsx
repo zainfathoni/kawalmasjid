@@ -14,6 +14,7 @@ import {
   createMetaData,
   createSitemap,
   formatRelativeTime,
+  truncateText,
 } from "~/utils";
 
 import type { LoaderArgs } from "@remix-run/node";
@@ -71,8 +72,7 @@ export default function Route() {
                   className="card hover:card-hover flex h-full flex-col space-y-0"
                 >
                   <h3>{place.name}</h3>
-                  <p>{place.description}</p>
-                  {/* <p className="dim">{truncateText(place.content, 70)}</p> */}
+                  <p className="dim">{truncateText(place.description, 120)}</p>
                   <div className="queue-center dim">
                     <AvatarAuto user={place.user} className="size-md" />
                     <b>{place.user.name}</b>

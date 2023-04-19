@@ -10,6 +10,7 @@
 export const configUser = {
   navigationItems: [
     { to: "notes", slug: "notes", name: "Notes" },
+    { to: "places", slug: "places", name: "Places" },
     // { to: "note-categories", name: "Note Categories" },
     // { to: "note-tags", name: "Note Tags" },
   ],

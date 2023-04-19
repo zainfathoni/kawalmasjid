@@ -108,6 +108,7 @@ export const query = {
   async getMetrics({ id }: Pick<User, "id">) {
     const metrics = await prisma.$transaction([
       prisma.note.count({ where: { userId: id } }),
+      prisma.place.count({ where: { userId: id } }),
     ]);
 
     return configUser.navigationItems.map((item, index) => {

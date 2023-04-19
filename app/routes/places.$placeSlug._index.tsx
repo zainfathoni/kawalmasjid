@@ -36,8 +36,8 @@ export default function Route() {
             <h1>
               <Balancer>{place.name}</Balancer>
             </h1>
-            <h2>{place.description}</h2>
           </header>
+          {place.description}
         </article>
       </div>
     </Layout>

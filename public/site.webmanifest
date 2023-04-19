@@ -2,7 +2,6 @@
   "name": "Kawal Masjid",
   "short_name": "Kawal Masjid",
   "description": "Platform to inform Infaq Online Masjid seluruh Indonesia.",
-  "start_url": "https://kawalmasj.id",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",
@@ -15,8 +14,10 @@
       "type": "image/png"
     }
   ],
+  "start_url": "/",
+  "scope": "/",
   "theme_color": "#3a9276",
-  "background_color": "#ffffff",
-  "orientation": "portrait-primary",
-  "display": "standalone"
+  "background_color": "#f4faf7",
+  "display": "standalone",
+  "orientation": "portrait-primary"
 }

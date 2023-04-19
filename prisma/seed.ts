@@ -93,6 +93,32 @@ export async function seedNotes() {
   });
 }
 
+export async function seedPlaces() {
+  // ---------------------------------------------------------------------------
+  console.info("Seed places...");
+  await prisma.place.deleteMany();
+
+  const user = await prisma.user.findFirst({
+    where: { role: { symbol: "ADMIN" } },
+  });
+  invariant(user, "User with role symbol ADMIN is not found");
+
+  const place1 = {
+    name: "The first place",
+    description: "Description about the place",
+  };
+
+  const slug = voca.slugify(place1.name);
+  const nanoid = customAlphabet("abcdefghijklmnopqrstuvwxyz1234567890", 10);
+  await prisma.place.create({
+    data: {
+      user: { connect: { id: user.id } },
+      slug: `${slug}-${nanoid()}`,
+      ...place1,
+    },
+  });
+}
+
 seed()
   .catch((e) => {
     console.error(e);

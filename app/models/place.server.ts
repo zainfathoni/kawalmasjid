@@ -7,11 +7,16 @@ export const query = {
   count() {
     return prisma.place.count();
   },
-  getAll() {
+  getAll({ limit = 10, cursor = null } = {}) {
     return prisma.place.findMany({
       // FIXME: where: { isPublished: true },
       include: { user: { select: model.user.fields.public } },
       orderBy: { updatedAt: "desc" },
+
+      // Read https://www.prisma.io/docs/concepts/components/prisma-client/pagination
+      skip: cursor ? 1 : 0,
+      take: limit,
+      ...(cursor ? { cursor: { id: cursor } } : {}),
     });
   },
   getBySlug({ slug }: Pick<Place, "slug">) {

@@ -2,6 +2,7 @@ _*.md
 .cache
 .DS_Store
 .env
+.env.production
 .env.staging
 .env*.local
 .output

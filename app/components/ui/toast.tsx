@@ -33,6 +33,7 @@ export const ToastViewport = forwardRef<
 ));
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 export const toastVariants = cva(
   cn(
     "p-4 pe-8",

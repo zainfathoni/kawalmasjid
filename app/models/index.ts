@@ -8,6 +8,7 @@ import * as userPassword from "./user-password.server";
 import * as userProfile from "./user-profile.server";
 import * as userRole from "./user-role.server";
 import * as userNote from "./user.note.server";
+import * as userPlace from "./user.place.server";
 import * as user from "./user.server";
 
 export const model = {
@@ -18,6 +19,7 @@ export const model = {
   place,
   user,
   userNote,
+  userPlace,
   userNotification,
   userPassword,
   userProfile,

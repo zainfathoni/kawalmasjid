@@ -5,7 +5,8 @@ import { useActionData, useLoaderData, useNavigation } from "@remix-run/react";
 import { useId, useState } from "react";
 import { badRequest, serverError } from "remix-utils";
 
-import { FileInfo, Widget as UploadcareWidget } from "@uploadcare/react-widget";
+import type { FileInfo } from "@uploadcare/react-widget";
+import { Widget as UploadcareWidget } from "@uploadcare/react-widget";
 import uploadcareTabEffects from "uploadcare-widget-tab-effects/react-en";
 
 import {
@@ -52,6 +53,9 @@ export async function action({ request }: ActionArgs) {
         description: submission.value.description,
       },
       placeImage: {
+        // FIXME: Either always require image or allow creating places without image
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         url: submission.value.imageUrl,
       },
     });

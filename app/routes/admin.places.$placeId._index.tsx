@@ -190,7 +190,12 @@ export default function Route() {
                 </TooltipAuto>
                 <span>•</span>
                 <span>Verified by: </span>
-                <b>{place.verifiedBy.name}</b>
+                <RemixLinkText
+                  prefetch="intent"
+                  to={`/admin/users/${place.verifiedBy.id}`}
+                >
+                  {place.verifiedBy.name}
+                </RemixLinkText>
               </>
             ) : (
               <span>Unverified</span>

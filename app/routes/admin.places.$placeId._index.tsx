@@ -12,7 +12,7 @@ import {
   TooltipAuto,
 } from "~/components";
 import { requireUserSession } from "~/helpers";
-import { EditPencil, Eye, Trash } from "~/icons";
+import { EditPencil, Eye, Trash, Check, SendDiagonal } from "~/icons";
 import { model } from "~/models";
 import {
   createSitemap,
@@ -32,7 +32,7 @@ export async function loader({ params }: LoaderArgs) {
 }
 
 export async function action({ request }: ActionArgs) {
-  await requireUserSession(request);
+  const { user } = await requireUserSession(request);
 
   const formData = await request.formData();
   const submission = parse(formData);
@@ -41,6 +41,27 @@ export async function action({ request }: ActionArgs) {
     try {
       await model.adminPlace.mutation.deleteById({
         id: submission.payload.placeId,
+      });
+      return redirect(`..`);
+    } catch (error) {
+      console.error(error);
+      return serverError(submission);
+    }
+  } else if (submission.payload.intent === "publish-place") {
+    try {
+      await model.adminPlace.mutation.publish({
+        id: submission.payload.placeId,
+      });
+      return redirect(`..`);
+    } catch (error) {
+      console.error(error);
+      return serverError(submission);
+    }
+  } else if (submission.payload.intent === "verify-place") {
+    try {
+      await model.adminPlace.mutation.verify({
+        id: submission.payload.placeId,
+        user,
       });
       return redirect(`..`);
     } catch (error) {
@@ -66,6 +87,37 @@ export default function Route() {
             <Eye className="size-xs" />
             <span>View on Site</span>
           </ButtonLink>
+
+          {!place.isPublished ? (
+            <RemixForm method="patch">
+              <input type="hidden" name="placeId" value={place.id} />
+              <Button
+                size="xs"
+                variant="default"
+                name="intent"
+                value="publish-place"
+              >
+                <SendDiagonal className="size-xs" />
+                <span>Publish</span>
+              </Button>
+            </RemixForm>
+          ) : null}
+
+          {!place.isVerified ? (
+            <RemixForm method="patch">
+              <input type="hidden" name="placeId" value={place.id} />
+              <Button
+                size="xs"
+                variant="success"
+                name="intent"
+                value="verify-place"
+              >
+                <Check className="size-xs" />
+                <span>Verify</span>
+              </Button>
+            </RemixForm>
+          ) : null}
+
           <ButtonLink to="edit" size="xs" variant="warning">
             <EditPencil className="size-xs" />
             <span>Edit</span>
@@ -117,6 +169,25 @@ export default function Route() {
               <span>Updated at: </span>
               <b>{formatRelativeTime(place.updatedAt)}</b>
             </TooltipAuto>
+          </div>
+          <div className="queue-center text-xs">
+            {place.publishedAt ? (
+              <TooltipAuto content={<b>{formatDateTime(place.publishedAt)}</b>}>
+                <span>Published at: </span>
+                <b>{formatRelativeTime(place.publishedAt)}</b>
+              </TooltipAuto>
+            ) : (
+              <span>Not yet published</span>
+            )}
+            <span>•</span>
+            {place.verifiedAt ? (
+              <TooltipAuto content={<b>{formatDateTime(place.verifiedAt)}</b>}>
+                <span>Verified at: </span>
+                <b>{formatRelativeTime(place.verifiedAt)}</b>
+              </TooltipAuto>
+            ) : (
+              <span>Unverified</span>
+            )}
           </div>
         </header>
 

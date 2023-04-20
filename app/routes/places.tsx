@@ -10,7 +10,7 @@ export const handle: SEOHandle = {
     const places = await model.place.query.getAll();
     return places.map((place) => {
       return {
-        route: `/${place.user.username}/${place.slug}`,
+        route: `/places/${place.slug}`,
         priority: 0.7,
         lastmod: formatDateLastMod(place.updatedAt),
       };

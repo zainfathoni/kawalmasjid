@@ -73,7 +73,7 @@ export default function Route() {
                   <li key={place.id}>
                     <RemixLink
                       prefetch="intent"
-                      to={`/${place.user.username}/${place.slug}`}
+                      to={`/places/${place.slug}`}
                       className="card-sm hover:card-hover"
                     >
                       <h4>{place.name}</h4>

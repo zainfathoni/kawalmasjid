@@ -62,11 +62,7 @@ export default function Route() {
       <header>
         <div className="queue-center">
           <span>View Place</span>
-          <ButtonLink
-            to={`/${place.user.username}/${place.slug}`}
-            size="xs"
-            variant="info"
-          >
+          <ButtonLink to={`/places/${place.slug}`} size="xs" variant="info">
             <Eye className="size-xs" />
             <span>View on Site</span>
           </ButtonLink>

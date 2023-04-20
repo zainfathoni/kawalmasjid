@@ -167,10 +167,10 @@ export default function Route() {
               name="intent"
               value="submit"
               isSubmitting={isSubmitting}
-              loadingText="Menambahkan masjid..."
+              loadingText="Menambahkan informasi..."
               className="grow"
             >
-              Tambah Masjid
+              Tambah Informasi
             </ButtonLoading>
             <Button type="reset" variant="subtle">
               Reset

@@ -274,7 +274,7 @@ function UserSettingsTabProfile() {
             </div>
             <Input
               {...conform.input(headline)}
-              placeholder="Your headline"
+              placeholder="Headline Anda"
               defaultValue={String(user.profile.headline)}
             />
             {headline.error && (
@@ -286,7 +286,7 @@ function UserSettingsTabProfile() {
 
           <div className="space-y-1">
             <div className="queue-center justify-between">
-              <Label htmlFor={bio.id}>Bio</Label>
+              <Label htmlFor={bio.id}>Biodata</Label>
               <ButtonCopy
                 variant="ghost"
                 size="xs"

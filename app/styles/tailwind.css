@@ -138,6 +138,9 @@
   .queue-center-sm {
     @apply queue-sm items-center;
   }
+  .queue-center-lg {
+    @apply queue-lg items-center;
+  }
   .stack {
     @apply queue flex-col;
   }

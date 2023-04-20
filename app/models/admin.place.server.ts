@@ -10,14 +10,19 @@ export const query = {
   },
   getAll() {
     return prisma.place.findMany({
-      include: { user: { select: model.user.fields.public } },
+      include: {
+        user: { select: model.user.fields.public },
+      },
       orderBy: { updatedAt: "desc" },
     });
   },
   getById({ id }: Pick<Place, "id">) {
     return prisma.place.findFirst({
       where: { id },
-      include: { user: { select: model.user.fields.public } },
+      include: {
+        user: { select: model.user.fields.public },
+        verifiedBy: { select: model.user.fields.public },
+      },
     });
   },
 };

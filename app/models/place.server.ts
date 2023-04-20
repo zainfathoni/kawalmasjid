@@ -30,6 +30,7 @@ export const query = {
           select: model.user.fields.public,
         },
         images: true,
+        qrCode: true,
       },
     });
   },
@@ -48,6 +49,7 @@ export const query = {
       include: {
         user: { select: model.user.fields.public },
         images: true,
+        qrCode: true,
       },
     });
   },

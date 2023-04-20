@@ -1,8 +1,8 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import { AvatarAuto, ButtonLink, Debug, RemixLink } from "~/components";
-import { Eye } from "~/icons";
+import { AvatarAuto, Badge, ButtonLink, Debug, RemixLink } from "~/components";
+import { Check, Eye, SendDiagonal, X } from "~/icons";
 import { model } from "~/models";
 import { createSitemap, formatPluralItems } from "~/utils";
 
@@ -41,10 +41,36 @@ export default function Route() {
             <li key={place.id}>
               <RemixLink
                 to={place.id}
-                className="card hover:card-hover block space-y-1"
+                className="card hover:card-hover block space-y-2"
               >
                 <h3>{place.name}</h3>
                 <code className="text-xs">{place.slug}</code>
+
+                <div className="queue-center text-xs">
+                  {place.isVerified ? (
+                    <Badge variant="brand" size="sm">
+                      <Check className="size-xs" />
+                      <span>Verified</span>
+                    </Badge>
+                  ) : (
+                    <Badge variant="danger" size="sm">
+                      <X className="size-xs" />
+                      <span>Unverified</span>
+                    </Badge>
+                  )}
+                  {place.isPublished ? (
+                    <Badge variant="brand" size="sm">
+                      <SendDiagonal className="size-xs" />
+                      <span>Published</span>
+                    </Badge>
+                  ) : (
+                    <Badge variant="default" size="sm">
+                      <SendDiagonal className="size-xs" />
+                      <span>Draft</span>
+                    </Badge>
+                  )}
+                </div>
+
                 <div className="queue-center">
                   <AvatarAuto user={place.user} className="size-md" />
                   <span className="text-sm">

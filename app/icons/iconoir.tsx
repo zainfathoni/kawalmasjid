@@ -1,5 +1,5 @@
 /**
- * Iconoir icon set
+ * Iconoir icon set (https://iconoir.com/)
  * has 1300+ icons
  */
 
@@ -33,6 +33,7 @@ export {
   PeaceHand,
   Plus,
   Search,
+  SendDiagonal,
   Settings,
   SubmitDocument,
   Svg3DSelectFace as Components,

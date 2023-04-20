@@ -55,6 +55,29 @@ export const mutation = {
       },
     });
   },
+  verify({ id, user }: { id: Pick<Place, "id">; user: User }) {
+    return prisma.place.update({
+      where: {
+        id,
+      },
+      data: {
+        isVerified: true,
+        verifiedAt: new Date(),
+        verifiedById: user.id,
+      },
+    });
+  },
+  publish({ id }: { id: Pick<Place, "id"> }) {
+    return prisma.place.update({
+      where: {
+        id,
+      },
+      data: {
+        isPublished: true,
+        publishedAt: new Date(),
+      },
+    });
+  },
   deleteAll() {
     return prisma.place.deleteMany();
   },

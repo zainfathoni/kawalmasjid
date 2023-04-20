@@ -26,10 +26,7 @@ const redirectTo = z.string().optional();
 
 const roleSymbol = z.string().min(1, "Peran diperlukan");
 
-const headline = z
-  .string()
-  .max(50, "Headline terbatas 50 karakter")
-  .optional();
+const headline = z.string().max(50, "Headline terbatas 50 karakter").optional();
 
 const bio = z.string().max(280, "Biodata terbatas 280 karakter").optional();
 

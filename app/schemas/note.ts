@@ -1,10 +1,7 @@
 import { z } from "zod";
 
 export const schemaNoteNew = z.object({
-  title: z
-    .string()
-    .min(1, "Judul diperlukan")
-    .max(50, "Judul max 50 karakter"),
+  title: z.string().min(1, "Judul diperlukan").max(50, "Judul max 50 karakter"),
   description: z
     .string()
     .min(1, "Deskripsi diperlukan")

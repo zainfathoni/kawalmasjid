@@ -54,18 +54,13 @@ export async function loader({ request, params }: LoaderArgs) {
 }
 
 export async function action({ request }: ActionArgs) {
-  const { userSession, user } = await requireUserSession(request);
+  const { userSession } = await requireUserSession(request);
 
   const formData = await request.formData();
   const submission = parse(formData);
 
   if (submission.payload.intent === "delete-place") {
     try {
-      console.log({
-        id: submission.payload.placeId,
-        userId: userSession.id,
-      })
-
       await model.userPlace.mutation.deleteById({
         id: submission.payload.placeId,
         userId: userSession.id,

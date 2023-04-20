@@ -2,7 +2,14 @@ import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { notFound, serverError } from "remix-utils";
 
-import { Balancer, Button, ButtonLink, Layout, RemixForm } from "~/components";
+import {
+  Balancer,
+  Button,
+  ButtonLink,
+  Layout,
+  RemixForm,
+  Image,
+} from "~/components";
 import { model } from "~/models";
 import {
   createCacheHeaders,
@@ -111,6 +118,9 @@ export default function Route() {
             <h1>
               <Balancer>{place.name}</Balancer>
             </h1>
+            {place.images.map((img) => (
+              <Image src={img.url} key={img.id} alt={place.name} />
+            ))}
           </div>
         </header>
       }

@@ -10,7 +10,10 @@ export const query = {
   getAll({ limit = 10, cursor = null } = {}) {
     return prisma.place.findMany({
       // FIXME: where: { isPublished: true },
-      include: { user: { select: model.user.fields.public } },
+      include: {
+        user: { select: model.user.fields.public },
+        images: true,
+      },
       orderBy: { updatedAt: "desc" },
 
       // Read https://www.prisma.io/docs/concepts/components/prisma-client/pagination
@@ -22,7 +25,12 @@ export const query = {
   getBySlug({ slug }: Pick<Place, "slug">) {
     return prisma.place.findFirst({
       where: { slug },
-      include: { user: { select: model.user.fields.public } },
+      include: {
+        user: {
+          select: model.user.fields.public,
+        },
+        images: true,
+      },
     });
   },
   // TODO: might evaluate again later for the performance
@@ -37,7 +45,10 @@ export const query = {
           { user: { username: { equals: username } } },
         ],
       },
-      include: { user: { select: model.user.fields.public } },
+      include: {
+        user: { select: model.user.fields.public },
+        images: true,
+      },
     });
   },
   search({ q }: { q: string | undefined }) {

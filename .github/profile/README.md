@@ -1,3 +1,3 @@
 # Kawal Masjid
 
-Web app starter kit with Remix and Tailwind.
+Platform Infaq Online Masjid seluruh Indonesia

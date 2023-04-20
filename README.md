@@ -31,7 +31,7 @@ Follow the progress on:
 
 ## Tech Stack
 
-Listed here are only the most important parts in the stack.️ Some setup mostly finished, but some might haven't done yet or still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
+Listed here are only the most important parts in the stack.️ Some setups are mostly finished, but some might haven't been done yet or are still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
 
 ## Development
 
@@ -72,7 +72,7 @@ Once you have the database URL connection string, for example:
 DATABASE_URL='mysql://username:pscale_pw_password@region.connect.psdb.cloud/name?sslaccept=strict'
 ```
 
-If you need to use local database, run [Docker compose](./docker-compose.yml):
+If you need to use a local database, run [Docker Compose](./docker-compose.yml):
 
 ```sh
 docker compose up
@@ -84,7 +84,7 @@ While in development, you can:
 - Check generated Prisma documentation with `nr docs:prisma` (it runs `prisma-docs-generator serve`) then open <http://localhost:5858>
 - Visualize the schema with [Prisma Editor](https://github.com/mohammed-bahumaish/prisma-editor) or [Prismaliser](https://prismaliser.app)
 - Push Prisma schema changes for PlanetScale with `nr prisma:push` (it runs `prisma db push`)
-  - You might notice that with [PlanetScale](https://planetscale.com/docs/tutorials/prisma-quickstart) approach with [Prisma](https://prisma.io/docs/guides/database/using-prisma-with-planetscale), we don't need migration files in our repo, rather managed in their platform.
+  - You might notice that with [PlanetScale's](https://planetscale.com/docs/tutorials/prisma-quickstart) approach with [Prisma](https://prisma.io/docs/guides/database/using-prisma-with-planetscale), we don't need migration files in our repo, but rather managed in their platform.
 
 ### Run Development Server
 
@@ -104,7 +104,7 @@ Remix App Server started at http://localhost:3000
 
 Open up <http://localhost:3000> and you should be ready to go!
 
-With HMR, it will run both `dev:remix` and `dev:express`, the Remix server and Express server with HMR enabled. Then wait until you see this:
+With HMR, it will run both `dev:remix` and `dev:express`, the Remix server and the Express server with HMR enabled. Then wait until you see this:
 
 ```sh
 📀 Remix on Express server port :3000
@@ -116,4 +116,4 @@ Open up <http://localhost:3000> and you should be ready to go!
 
 ## References
 
-- [tabung.sg](https://tabung.sg)
+- [Tabung SG](https://tabung.sg)

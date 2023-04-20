@@ -234,8 +234,8 @@ model Address {
   updatedAt DateTime @updatedAt
 
   fullAddress   String // The full address text, including province and city
-  province      String
-  city          String
+  province      String // Province
+  city          String // Kota/Kabupaten
   googleMapsURL String? // https://goo.gl/maps/1xABCDEF123456
 
   // Geolocation, for future purposes when we need to display an embedded map
@@ -244,6 +244,8 @@ model Address {
 
   placeId String @unique
   place   Place  @relation("PlaceAddress", fields: [placeId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+  @@index([placeId])
 }
 
 // -----------------------------------------------------------------------------

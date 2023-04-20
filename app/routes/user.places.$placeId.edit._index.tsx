@@ -104,15 +104,6 @@ export default function Route() {
           disabled={isSubmitting}
           className="space-y-4 disabled:opacity-80"
         >
-          <div className="dim stack text-xs">
-            <span>
-              ID: <code>{place.id}</code>
-            </span>
-            <span>
-              Slug: <code>{place.slug}</code>
-            </span>
-          </div>
-
           <input hidden {...conform.input(id)} defaultValue={place.id} />
           <input hidden {...conform.input(slug)} defaultValue={place.slug} />
 

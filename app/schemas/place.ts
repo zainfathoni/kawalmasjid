@@ -9,6 +9,8 @@ export const schemaPlaceNew = z.object({
     .string()
     .min(1, "Description is required")
     .max(5000, "Description max of 5000 characters"),
+  // TODO: handle multiple images
+  imageUrl: z.string().min(1, "Image URL is required").optional(),
 });
 
 export const schemaPlaceUpdate = z

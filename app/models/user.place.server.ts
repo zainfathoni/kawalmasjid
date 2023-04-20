@@ -2,7 +2,7 @@ import { createPlaceSlug, updatePlaceSlug } from "~/helpers";
 import { prisma } from "~/libs";
 import { model } from "~/models";
 
-import type { Place, User } from "@prisma/client";
+import type { Place, PlaceImage, User } from "@prisma/client";
 
 export const query = {
   count({ user }: { user: Pick<User, "id"> }) {
@@ -26,14 +26,17 @@ export const query = {
 };
 
 export const mutation = {
-  create({
+  async create({
     user,
     place,
+    placeImage,
   }: {
     user: Pick<User, "id">;
     place: Pick<Place, "name" | "description">;
+    placeImage: Pick<PlaceImage, "url">;
   }) {
-    return prisma.place.create({
+    // TODO: refactor into a single transaction
+    const newPlace = await prisma.place.create({
       data: {
         user: { connect: { id: user.id } },
         slug: createPlaceSlug(place),
@@ -41,6 +44,22 @@ export const mutation = {
         description: place.description.trim(),
       },
     });
+    if (!newPlace) {
+      console.error("");
+    }
+
+    const newPlaceImage = await prisma.placeImage.create({
+      data: {
+        url: placeImage.url,
+        placeId: newPlace.id,
+        userId: user.id,
+      },
+    });
+    if (!newPlaceImage) {
+      console.error("");
+    }
+
+    return newPlace;
   },
   update({
     place,

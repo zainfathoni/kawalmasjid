@@ -1,8 +1,8 @@
 import { conform, useForm } from "@conform-to/react";
 import { getFieldsetConstraint, parse } from "@conform-to/zod";
-import { redirect } from "@remix-run/node";
-import { useActionData, useNavigation } from "@remix-run/react";
-import { useId } from "react";
+import { json, redirect } from "@remix-run/node";
+import { useActionData, useLoaderData, useNavigation } from "@remix-run/react";
+import { useId, useState } from "react";
 import { badRequest, serverError } from "remix-utils";
 
 import {
@@ -24,8 +24,14 @@ import { createSitemap } from "~/utils";
 import type { ActionArgs } from "@remix-run/node";
 import type { z } from "zod";
 import { Mosque } from "~/icons";
+import { FileInfo, Widget } from "@uploadcare/react-widget";
 
 export const handle = createSitemap();
+
+export function loader() {
+  const UPLOADCARE_PUBLIC_KEY = process.env.UPLOADCARE_PUBLIC_KEY;
+  return json({ UPLOADCARE_PUBLIC_KEY });
+}
 
 export async function action({ request }: ActionArgs) {
   const { userSession } = await requireUserSession(request);
@@ -39,7 +45,13 @@ export async function action({ request }: ActionArgs) {
   try {
     const newPlace = await model.userPlace.mutation.create({
       user: userSession,
-      place: submission.value,
+      place: {
+        name: submission.value.name,
+        description: submission.value.description,
+      },
+      placeImage: {
+        url: submission.value.imageUrl
+      }
     });
     if (!newPlace) {
       return badRequest(submission);
@@ -56,6 +68,13 @@ export default function Route() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
 
+  const { UPLOADCARE_PUBLIC_KEY } = useLoaderData<typeof loader>();
+  const [imageUrl, setImageUrl] = useState("");
+
+  if (!UPLOADCARE_PUBLIC_KEY) {
+    return null;
+  }
+
   const id = useId();
   const [form, { name, description }] = useForm<z.infer<typeof schemaPlaceNew>>(
     {
@@ -68,6 +87,10 @@ export default function Route() {
       constraint: getFieldsetConstraint(schemaPlaceNew),
     }
   );
+
+  const handlePlaceImageChange = (file: FileInfo) => {
+    setImageUrl(file.cdnUrl ?? "");
+  };
 
   return (
     <section className="space-y-2">
@@ -103,11 +126,30 @@ export default function Route() {
             <TextArea
               {...conform.input(description)}
               placeholder="Masukkan dekripsi dan keterangan masjid, termasuk kontak, alamat, dll. Maksimum 5000 karakter."
-              rows={10}
+              rows={5}
               defaultValue={configDev.isDevelopment ? "Deskripsi masjid." : ""}
               className="border-none px-1 sm:text-lg"
             />
             <Alert id={description.errorId}>{description.error}</Alert>
+          </div>
+
+          <div>
+            <label hidden htmlFor="imageUrl">
+              Your image:
+            </label>
+            <input
+              type="hidden"
+              id="imageUrl"
+              name="imageUrl"
+              value={imageUrl}
+              readOnly
+            />
+            <label htmlFor="file">Unggah foto masjid:</label>{" "}
+            <Widget
+              publicKey={UPLOADCARE_PUBLIC_KEY}
+              id="file"
+              onChange={handlePlaceImageChange}
+            />
           </div>
 
           <div className="queue-center">

@@ -16,16 +16,16 @@ export function SiteFooter({ noThemeToggle }: Props) {
         "mt-60 py-4 sm:py-8"
       )}
     >
-      <section className="contain flex flex-wrap items-end gap-4 sm:justify-between">
+      <section className="contain flex flex-wrap items-center justify-center gap-4 md:justify-between">
         <div className="space-y-4">
-          <p className="opacity-80">
+          <div className="opacity-80">
             <span>Hak Cipta &copy; </span>
             <span>{getCurrentYear()} </span>
             <span>{configMeta?.author.name}</span>
-          </p>
+          </div>
         </div>
 
-        <div className="flex w-full justify-end gap-1 sm:w-min sm:gap-2">
+        <div className="flex w-full justify-center gap-1 sm:w-min sm:gap-2 md:justify-end">
           <ButtonIconAnchor
             href={configSite?.links.github}
             variant="ghost"

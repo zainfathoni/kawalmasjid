@@ -61,11 +61,16 @@ export async function action({ request }: ActionArgs) {
 
   if (submission.payload.intent === "delete-place") {
     try {
-      await model.userNote.mutation.deleteById({
+      console.log({
+        id: submission.payload.placeId,
+        userId: userSession.id,
+      })
+
+      await model.userPlace.mutation.deleteById({
         id: submission.payload.placeId,
         userId: userSession.id,
       });
-      return redirect(`/${user.username}`);
+      return redirect(`/user/places`);
     } catch (error) {
       console.error(error);
       return serverError(submission);

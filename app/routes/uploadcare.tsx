@@ -16,7 +16,7 @@ export function loader() {
 }
 
 export async function action({ request }: ActionArgs) {
-  const { userSession, user } = await requireUserSession(request);
+  const { userSession } = await requireUserSession(request);
 
   const formData = await request.formData();
   const submission = parse(formData);
@@ -56,7 +56,6 @@ export default function Route() {
   const isSubmitting = navigation.state === "submitting";
 
   const { UPLOADCARE_PUBLIC_KEY } = useLoaderData<typeof loader>();
-
   const [imageUrl, setImageUrl] = useState("");
 
   if (!UPLOADCARE_PUBLIC_KEY) {
@@ -72,6 +71,8 @@ export default function Route() {
       <label htmlFor="file">Your file:</label>{" "}
       <Widget
         publicKey={UPLOADCARE_PUBLIC_KEY}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         id="file"
         onChange={handleChange}
       />

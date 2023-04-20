@@ -181,10 +181,17 @@ export default function Route() {
             )}
             <span>•</span>
             {place.verifiedAt ? (
-              <TooltipAuto content={<b>{formatDateTime(place.verifiedAt)}</b>}>
-                <span>Verified at: </span>
-                <b>{formatRelativeTime(place.verifiedAt)}</b>
-              </TooltipAuto>
+              <>
+                <TooltipAuto
+                  content={<b>{formatDateTime(place.verifiedAt)}</b>}
+                >
+                  <span>Verified at: </span>
+                  <b>{formatRelativeTime(place.verifiedAt)}</b>
+                </TooltipAuto>
+                <span>•</span>
+                <span>Verified by: </span>
+                <b>{place.verifiedBy.name}</b>
+              </>
             ) : (
               <span>Unverified</span>
             )}

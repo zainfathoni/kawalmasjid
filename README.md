@@ -18,6 +18,18 @@
 
 Made with [⏪ Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
 
+- [🕌 Kawal Masjid](#-kawal-masjid)
+  - [Introduction](#introduction)
+    - [Live](#live)
+  - [Tech Stack](#tech-stack)
+  - [Development](#development)
+    - [Install Dependencies](#install-dependencies)
+    - [Setup Environment Variables/Secrets](#setup-environment-variablessecrets)
+      - [Prisma ORM and Database Connection](#prisma-orm-and-database-connection)
+      - [Uploadcare](#uploadcare)
+    - [Run Development Server](#run-development-server)
+  - [References](#references)
+
 ### Live
 
 > 🚧 This project is still in very early development
@@ -31,7 +43,7 @@ Follow the progress on:
 
 ## Tech Stack
 
-Listed here are only the most important parts in the stack.️ Some setup mostly finished, but some might haven't done yet or still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
+Listed here are only the most important parts in the stack.️ Some setups are mostly finished, but some might haven't been done yet or are still in progress. More details and references can also be checked from [`mhaidarhanif/rewinds`](https://rewinds.mhaidarhanif.com) and [`catamyst/stack`](https://a.catamyst.com/stack).
 
 ## Development
 
@@ -62,17 +74,22 @@ cp -i .env.example .env
 
 Then edit `.env` as you need.
 
-### Prisma ORM and Database Connection
+These are the environment variables you need to set up on your own for developing locally:
+
+- `DATABASE_URL`
+- `UPLOADCARE_PUBLIC_KEY`
+
+#### Prisma ORM and Database Connection
 
 This repo is suited to use either your own MySQL instance or MySQL on PlanetScale.
 
-Once you have the database URL connection string, for example:
+Next, you need to set up your PlanetScale database. If you don't already have a [PlanetScale account](https://planetscale.com/docs/concepts/billing#planetscale-plans), you can [sign up for a free one here](https://auth.planetscale.com/sign-up). Then [create a free database](https://planetscale.com/docs/tutorials/nextjs-planetscale-netlify-template#create-your-database) and grab the `DATABASE_URL` from there. Once you have the database URL connection string, you can paste it to the `DATABASE_URL` env var, for example:
 
 ```sh
 DATABASE_URL='mysql://username:pscale_pw_password@region.connect.psdb.cloud/name?sslaccept=strict'
 ```
 
-If you need to use local database, run [Docker compose](./docker-compose.yml):
+If you prefer using a local database, run [Docker Compose](./docker-compose.yml):
 
 ```sh
 docker compose up
@@ -84,7 +101,11 @@ While in development, you can:
 - Check generated Prisma documentation with `nr docs:prisma` (it runs `prisma-docs-generator serve`) then open <http://localhost:5858>
 - Visualize the schema with [Prisma Editor](https://github.com/mohammed-bahumaish/prisma-editor) or [Prismaliser](https://prismaliser.app)
 - Push Prisma schema changes for PlanetScale with `nr prisma:push` (it runs `prisma db push`)
-  - You might notice that with [PlanetScale](https://planetscale.com/docs/tutorials/prisma-quickstart) approach with [Prisma](https://prisma.io/docs/guides/database/using-prisma-with-planetscale), we don't need migration files in our repo, rather managed in their platform.
+  - You might notice that with [PlanetScale's](https://planetscale.com/docs/tutorials/prisma-quickstart) approach with [Prisma](https://prisma.io/docs/guides/database/using-prisma-with-planetscale), we don't need migration files in our repo, but rather managed in their platform.
+
+#### Uploadcare
+
+We use [Uploadcare](https://uploadcare.com) to host uploaded images. If you want this feature to work when running the app locally on your machine, you need to create a new free account on Uploadcare and paste your [Public API key](https://uploadcare.com/docs/start/settings/#keys-public) to `UPLOADCARE_PUBLIC_KEY` env var.
 
 ### Run Development Server
 
@@ -104,7 +125,7 @@ Remix App Server started at http://localhost:3000
 
 Open up <http://localhost:3000> and you should be ready to go!
 
-With HMR, it will run both `dev:remix` and `dev:express`, the Remix server and Express server with HMR enabled. Then wait until you see this:
+With HMR, it will run both `dev:remix` and `dev:express`, the Remix server and the Express server with HMR enabled. Then wait until you see this:
 
 ```sh
 📀 Remix on Express server port :3000
@@ -116,4 +137,4 @@ Open up <http://localhost:3000> and you should be ready to go!
 
 ## References
 
-- [tabung.sg](https://tabung.sg)
+- [Tabung SG](https://tabung.sg)

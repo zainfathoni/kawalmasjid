@@ -18,6 +18,18 @@
 
 Made with [⏪ Rewinds](https://rewinds.mhaidarhanif.com), a web app starter kit with Remix, Tailwind CSS, and the TypeScript ecosystem. It is an opinionated collection of interactive UI components, hooks, and utilities.
 
+- [🕌 Kawal Masjid](#-kawal-masjid)
+  - [Introduction](#introduction)
+    - [Live](#live)
+  - [Tech Stack](#tech-stack)
+  - [Development](#development)
+    - [Install Dependencies](#install-dependencies)
+    - [Setup Environment Variables/Secrets](#setup-environment-variablessecrets)
+      - [Prisma ORM and Database Connection](#prisma-orm-and-database-connection)
+      - [Uploadcare](#uploadcare)
+    - [Run Development Server](#run-development-server)
+  - [References](#references)
+
 ### Live
 
 > 🚧 This project is still in very early development
@@ -62,17 +74,22 @@ cp -i .env.example .env
 
 Then edit `.env` as you need.
 
-### Prisma ORM and Database Connection
+These are the environment variables you need to set up on your own for developing locally:
+
+- `DATABASE_URL`
+- `UPLOADCARE_PUBLIC_KEY`
+
+#### Prisma ORM and Database Connection
 
 This repo is suited to use either your own MySQL instance or MySQL on PlanetScale.
 
-Once you have the database URL connection string, for example:
+Next, you need to set up your PlanetScale database. If you don't already have a [PlanetScale account](https://planetscale.com/docs/concepts/billing#planetscale-plans), you can [sign up for a free one here](https://auth.planetscale.com/sign-up). Then [create a free database](https://planetscale.com/docs/tutorials/nextjs-planetscale-netlify-template#create-your-database) and grab the `DATABASE_URL` from there. Once you have the database URL connection string, you can paste it to the `DATABASE_URL` env var, for example:
 
 ```sh
 DATABASE_URL='mysql://username:pscale_pw_password@region.connect.psdb.cloud/name?sslaccept=strict'
 ```
 
-If you need to use a local database, run [Docker Compose](./docker-compose.yml):
+If you prefer using a local database, run [Docker Compose](./docker-compose.yml):
 
 ```sh
 docker compose up
@@ -85,6 +102,10 @@ While in development, you can:
 - Visualize the schema with [Prisma Editor](https://github.com/mohammed-bahumaish/prisma-editor) or [Prismaliser](https://prismaliser.app)
 - Push Prisma schema changes for PlanetScale with `nr prisma:push` (it runs `prisma db push`)
   - You might notice that with [PlanetScale's](https://planetscale.com/docs/tutorials/prisma-quickstart) approach with [Prisma](https://prisma.io/docs/guides/database/using-prisma-with-planetscale), we don't need migration files in our repo, but rather managed in their platform.
+
+#### Uploadcare
+
+We use [Uploadcare](https://uploadcare.com) to host uploaded images. If you want this feature to work when running the app locally on your machine, you need to create a new free account on Uploadcare and paste your [Public API key](https://uploadcare.com/docs/start/settings/#keys-public) to `UPLOADCARE_PUBLIC_KEY` env var.
 
 ### Run Development Server
 

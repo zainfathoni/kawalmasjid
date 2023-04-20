@@ -1,14 +1,17 @@
 import { parse } from "@conform-to/dom";
-import type { ActionArgs } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
 import { useActionData, useLoaderData, useNavigation } from "@remix-run/react";
-import type { FileInfo } from "@uploadcare/react-widget";
-import { Widget } from "@uploadcare/react-widget";
 import { useState } from "react";
 import { badRequest, serverError } from "remix-utils";
 import { ButtonLoading, Debug, RemixForm } from "~/components";
 import { requireUserSession } from "~/helpers";
 import { prisma } from "~/libs";
+
+import { Widget as UploadcareWidget } from "@uploadcare/react-widget";
+import uploadcareTabEffects from "uploadcare-widget-tab-effects/react-en";
+
+import type { ActionArgs } from "@remix-run/node";
+import type { FileInfo } from "@uploadcare/react-widget";
 
 export function loader() {
   const UPLOADCARE_PUBLIC_KEY = process.env.UPLOADCARE_PUBLIC_KEY;
@@ -69,12 +72,16 @@ export default function Route() {
   return (
     <div>
       <label htmlFor="file">Your file:</label>{" "}
-      <Widget
-        publicKey={UPLOADCARE_PUBLIC_KEY}
+      <UploadcareWidget
+        publicKey={"demopublickey" || UPLOADCARE_PUBLIC_KEY}
+        tabs="file camera url"
+        previewStep
+        effects="crop, sharp, enhance"
+        customTabs={{ preview: uploadcareTabEffects }}
+        onChange={handleChange}
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         id="file"
-        onChange={handleChange}
       />
       <RemixForm method="post">
         <label hidden htmlFor="imageUrl">

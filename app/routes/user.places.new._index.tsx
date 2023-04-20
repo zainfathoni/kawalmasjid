@@ -5,6 +5,9 @@ import { useActionData, useLoaderData, useNavigation } from "@remix-run/react";
 import { useId, useState } from "react";
 import { badRequest, serverError } from "remix-utils";
 
+import { FileInfo, Widget as UploadcareWidget } from "@uploadcare/react-widget";
+import uploadcareTabEffects from "uploadcare-widget-tab-effects/react-en";
+
 import {
   Alert,
   Button,
@@ -20,11 +23,10 @@ import { requireUserSession } from "~/helpers";
 import { model } from "~/models";
 import { schemaPlaceNew } from "~/schemas";
 import { createSitemap } from "~/utils";
+import { Mosque } from "~/icons";
 
 import type { ActionArgs } from "@remix-run/node";
 import type { z } from "zod";
-import { Mosque } from "~/icons";
-import { FileInfo, Widget } from "@uploadcare/react-widget";
 
 export const handle = createSitemap();
 
@@ -50,8 +52,8 @@ export async function action({ request }: ActionArgs) {
         description: submission.value.description,
       },
       placeImage: {
-        url: submission.value.imageUrl
-      }
+        url: submission.value.imageUrl,
+      },
     });
     if (!newPlace) {
       return badRequest(submission);
@@ -84,10 +86,9 @@ export default function Route() {
     }
   );
 
-  const handlePlaceImageChange = (file: FileInfo) => {
+  const handleChangePlaceImage = (file: FileInfo) => {
     setImageUrl(file.cdnUrl ?? "");
   };
-
 
   return (
     <section className="space-y-2">
@@ -130,25 +131,35 @@ export default function Route() {
             <Alert id={description.errorId}>{description.error}</Alert>
           </div>
 
-          {!UPLOADCARE_PUBLIC_KEY && <p>Terdapat masalah untuk mengunggah foto masjid</p>}
-          {UPLOADCARE_PUBLIC_KEY && <div>
-            <label hidden htmlFor="imageUrl">
-              Foto masjid:
-            </label>
-            <input
-              type="hidden"
-              id="imageUrl"
-              name="imageUrl"
-              value={imageUrl}
-              readOnly
-            />
-            <label htmlFor="file">Unggah foto masjid:</label>{" "}
-            <Widget
-              publicKey={UPLOADCARE_PUBLIC_KEY}
-              id="file"
-              onChange={handlePlaceImageChange}
-            />
-          </div>}
+          {!UPLOADCARE_PUBLIC_KEY && (
+            <p>Terdapat masalah untuk mengunggah foto masjid</p>
+          )}
+          {UPLOADCARE_PUBLIC_KEY && (
+            <div>
+              <label hidden htmlFor="imageUrl">
+                Foto masjid:
+              </label>
+              <input
+                type="hidden"
+                id="imageUrl"
+                name="imageUrl"
+                value={imageUrl}
+                readOnly
+              />
+              <label htmlFor="file">Unggah foto masjid:</label>{" "}
+              <UploadcareWidget
+                publicKey={UPLOADCARE_PUBLIC_KEY}
+                tabs="file camera url"
+                previewStep
+                effects="crop, sharp, enhance"
+                customTabs={{ preview: uploadcareTabEffects }}
+                onChange={handleChangePlaceImage}
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                id="file"
+              />
+            </div>
+          )}
 
           <div className="queue-center">
             <ButtonLoading

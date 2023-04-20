@@ -322,6 +322,9 @@ dependencies:
   tiny-invariant:
     specifier: ^1.3.1
     version: 1.3.1
+  uploadcare-widget-tab-effects:
+    specifier: 1.6.0
+    version: 1.6.0(uploadcare-widget@3.21.0)
   usehooks-ts:
     specifier: ^2.9.1
     version: 2.9.1(react-dom@18.2.0)(react@18.2.0)
@@ -14809,6 +14812,14 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
+
+  /uploadcare-widget-tab-effects@1.6.0(uploadcare-widget@3.21.0):
+    resolution: {integrity: sha512-RoWxeZnk41qm8Mo19R8Zvshsuqetc4y+gFtxA89x+noLCSFItuviGZJBf7rcX3ocwn+aFNKbXp44dlaVDoYRIA==}
+    peerDependencies:
+      uploadcare-widget: 3.x
+    dependencies:
+      uploadcare-widget: 3.21.0
+    dev: false
 
   /uploadcare-widget@3.21.0:
     resolution: {integrity: sha512-9C/WLwK3Anx+76rDzg/pe1vBv41j4HapgxfbyVLS+3oolB3bd9NvURAkvfyEif8QUnt7MwK2Ubw3f7UP/a3v9w==}

@@ -3,19 +3,19 @@ import { z } from "zod";
 export const schemaPlaceNew = z.object({
   name: z
     .string()
-    .min(1, "Name is required")
-    .max(50, "Name max of 50 characters"),
+    .min(1, "Nama diperlukan")
+    .max(50, "Nama max 50 karakter"),
   description: z
     .string()
-    .min(1, "Description is required")
-    .max(5000, "Description max of 5000 characters"),
+    .min(1, "Deskripsi diperlukan")
+    .max(5000, "Deskripsi max 5000 karakter"),
   // TODO: handle multiple images
-  imageUrl: z.string().min(1, "Image URL is required").optional(),
+  imageUrl: z.string().optional(),
 });
 
 export const schemaPlaceUpdate = z
   .object({
-    id: z.string().min(1, "Existing id is required"),
-    slug: z.string().min(1, "Existing slug is required"),
+    id: z.string().min(1, "id diperlukan"),
+    slug: z.string().min(1, "slug diperlukan"),
   })
   .merge(schemaPlaceNew);

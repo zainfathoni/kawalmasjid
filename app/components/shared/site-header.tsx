@@ -18,13 +18,14 @@ import {
   RemixLinkText,
   RemixNavLink,
   SearchForm,
-  ThemeToggleButton
+  ThemeToggleButton,
 } from "~/components";
 import { configDev, configSite } from "~/configs";
 import { getUserIsAllowed } from "~/helpers";
 import { useRootLoaderData } from "~/hooks";
 import {
-  Components, LayoutDashboard,
+  Components,
+  LayoutDashboard,
   Mosque,
   DashboardSpeed,
   Inbox,
@@ -32,7 +33,7 @@ import {
   Menu,
   Plus,
   Settings,
-  User
+  User,
 } from "~/icons";
 import { cn } from "~/utils";
 

@@ -163,7 +163,7 @@ function UserSettingsTabUser() {
 
           <div className="space-y-1">
             <div className="queue-center justify-between">
-              <Label htmlFor={name.id}>Name</Label>
+              <Label htmlFor={name.id}>Nama Lengkap</Label>
               <ButtonCopy
                 variant="ghost"
                 size="xs"
@@ -173,7 +173,7 @@ function UserSettingsTabUser() {
             <Input
               {...conform.input(name)}
               type="text"
-              placeholder="Full Name"
+              placeholder="Nama Lengkap Anda"
               defaultValue={user.name}
             />
             {name.error && (
@@ -197,7 +197,7 @@ function UserSettingsTabUser() {
               </Alert>
             )}
             <p className="text-xs text-surface-500">
-              4 to 20 characters (letters, numbers, dot, underscore)
+              4-20 karakter (huruf, angka, titik, underscore)
             </p>
           </div>
 
@@ -206,7 +206,7 @@ function UserSettingsTabUser() {
             <Input
               {...conform.input(email)}
               type="email"
-              placeholder="name@email.com"
+              placeholder="nama@email.com"
               defaultValue={user.email}
             />
             {email.error && (
@@ -222,10 +222,10 @@ function UserSettingsTabUser() {
               name="intent"
               value="update-user-data"
               isSubmitting={isSubmitting}
-              loadingText="Updating Name..."
+              loadingText="Mengubah..."
               className="grow"
             >
-              Update Name
+              Ubah
             </ButtonLoading>
           </div>
         </fieldset>
@@ -363,7 +363,7 @@ function UserSettingsTabPassword() {
             <Label htmlFor={password.id}>New Password</Label>
             <InputPassword
               {...conform.input(password)}
-              placeholder="Your new password"
+              placeholder="Password baru"
               defaultValue=""
             />
             {password.error && (
@@ -377,7 +377,7 @@ function UserSettingsTabPassword() {
             <Label htmlFor={confirmPassword.id}>Confirm New Password</Label>
             <InputPassword
               {...conform.input(confirmPassword)}
-              placeholder="Confirm your new password"
+              placeholder="Konfirmasi password baru"
               defaultValue=""
             />
             {confirmPassword.error && (

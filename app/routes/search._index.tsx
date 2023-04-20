@@ -62,7 +62,7 @@ export default function Route() {
       }
     >
       <section className="space-y-4">
-        {itemsCount <= 0 && <h3>Maaf, tidak ditemukan.</h3>}
+        {itemsCount <= 0 && <h3>Maaf, tidak ditemukan data apapun.</h3>}
 
         {places.length > 0 && (
           <div className="space-y-2">

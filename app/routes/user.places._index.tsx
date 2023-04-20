@@ -56,7 +56,7 @@ export default function Route() {
         <div className="stack">
           <div>
             <h1>Data masjid</h1>
-            <p>Semua yang telah ditambahkan</p>
+            <p>Semua yang telah ditambahkan oleh Anda</p>
           </div>
 
           <div className="queue-center">

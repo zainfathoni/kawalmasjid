@@ -40,13 +40,13 @@ export default function Route() {
         <section>
           <div className="queue-center">
             <ButtonLink size="xs" to="/user/profile">
-              Profile
+              Profil
             </ButtonLink>
             <ButtonLink size="xs" to="/user/settings">
-              Settings
+              Pengaturan
             </ButtonLink>
             <ButtonLink variant="danger" size="xs" to="/logout">
-              Log out
+              Keluar
             </ButtonLink>
             {userIsAllowed && (
               <ButtonLink

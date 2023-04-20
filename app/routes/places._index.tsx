@@ -43,21 +43,21 @@ export default function Route() {
   return (
     <Layout
       isSpaced
-      containSize="sm"
+      variant="sm"
       layoutHeader={
-        <PageHeader
-          size="sm"
-          containSize="sm"
-          withContainer={false}
-          withBackground={false}
-          withMarginBottom={false}
-        >
-          <h1>Semua masjid</h1>
-          <p>Seluruh {placesCount} data masjid yang telah dikumpulkan.</p>
-          <ButtonLink to="/new" size="sm">
-            <Plus className="size-sm" />
-            <span>Tambah Masjid</span>
-          </ButtonLink>
+        <PageHeader size="xs">
+          <div className="contain-sm stack">
+            <div>
+              <h1>Semua masjid</h1>
+              <p>Seluruh {placesCount} data masjid yang telah dikumpulkan.</p>
+            </div>
+            <div className="queue-center">
+              <ButtonLink to="/new" size="sm">
+                <Plus className="size-sm" />
+                <span>Tambah Masjid</span>
+              </ButtonLink>
+            </div>
+          </div>
         </PageHeader>
       }
     >

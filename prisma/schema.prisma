@@ -186,11 +186,9 @@ model Place {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  slug        String  @unique
+  slug        String @unique
   name        String
-  description String  @db.Text
-  mapsUrl     String?
-  address     String?
+  description String @db.Text
 
   isVerified   Boolean   @default(false)
   verifiedAt   DateTime?
@@ -200,9 +198,10 @@ model Place {
   isPublished Boolean   @default(false)
   publishedAt DateTime?
 
-  userId String
-  user   User         @relation("UserPlaces", fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
-  images PlaceImage[] @relation("PlaceImages")
+  userId  String
+  user    User         @relation("UserPlaces", fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  images  PlaceImage[] @relation("PlaceImages")
+  address Address?     @relation("PlaceAddress")
 
   @@index([userId])
   @@index([verifiedById])
@@ -222,6 +221,30 @@ model PlaceImage {
   place   Place  @relation("PlaceImages", fields: [placeId], references: [id], onUpdate: Cascade, onDelete: Cascade)
 
   @@index([userId])
+  @@index([placeId])
+}
+
+// -----------------------------------------------------------------------------
+// Address
+// -----------------------------------------------------------------------------
+
+model Address {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  fullAddress   String // The full address text, including province and city
+  province      String // Province
+  city          String // Kota/Kabupaten
+  googleMapsURL String? // https://goo.gl/maps/1xABCDEF123456
+
+  // Geolocation, for future purposes when we need to display an embedded map
+  latitude  Decimal? // -90 to 90, Example: -6.1234567
+  longitude Decimal? // -180 to 180, Example: 106.1234567
+
+  placeId String @unique
+  place   Place  @relation("PlaceAddress", fields: [placeId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
   @@index([placeId])
 }
 

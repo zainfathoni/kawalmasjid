@@ -102,7 +102,7 @@ export default function Route() {
             <TextArea
               {...conform.input(description)}
               placeholder="Type your longer description here..."
-              rows={10}
+              rows={5}
               defaultValue={
                 configDev.isDevelopment
                   ? "Here is the long description about the place."

@@ -158,7 +158,7 @@ export default function Route() {
             <TextArea
               {...conform.input(content)}
               placeholder="Type your longer content here, maximum content length of 10,000 characters..."
-              rows={10}
+              rows={5}
               defaultValue={note.content}
               className="overflow-y-scroll border-none px-0 sm:text-xl"
             />

@@ -114,7 +114,7 @@ export default function Route() {
             <TextArea
               {...conform.input(description)}
               placeholder="Type your longer description here..."
-              rows={10}
+              rows={5}
               defaultValue={place.description}
             />
             <Alert id={description.errorId}>{description.error}</Alert>

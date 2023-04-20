@@ -125,7 +125,7 @@ export default function Route() {
             <TextArea
               {...conform.input(content)}
               placeholder="Type your longer content here..."
-              rows={10}
+              rows={5}
               defaultValue={note.content}
             />
             <Alert id={content.errorId}>{content.error}</Alert>

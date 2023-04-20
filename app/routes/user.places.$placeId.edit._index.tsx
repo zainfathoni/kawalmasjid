@@ -124,7 +124,7 @@ export default function Route() {
             <TextArea
               {...conform.input(description)}
               placeholder="Masukkan dekripsi dan keterangan masjid, termasuk kontak, alamat, dll. Maksimum 5000 karakter."
-              rows={10}
+              rows={5}
               defaultValue={place.description}
               className="border-none px-1 sm:text-lg"
             />

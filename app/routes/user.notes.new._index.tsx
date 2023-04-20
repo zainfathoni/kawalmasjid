@@ -124,7 +124,7 @@ export default function Route() {
             <TextArea
               {...conform.input(content)}
               placeholder="Type your longer content here, maximum content length of 10,000 characters..."
-              rows={10}
+              rows={5}
               defaultValue={
                 configDev.isDevelopment
                   ? "Here is the long content about the note."

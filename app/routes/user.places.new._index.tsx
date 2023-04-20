@@ -71,10 +71,6 @@ export default function Route() {
   const { UPLOADCARE_PUBLIC_KEY } = useLoaderData<typeof loader>();
   const [imageUrl, setImageUrl] = useState("");
 
-  if (!UPLOADCARE_PUBLIC_KEY) {
-    return null;
-  }
-
   const id = useId();
   const [form, { name, description }] = useForm<z.infer<typeof schemaPlaceNew>>(
     {
@@ -91,6 +87,7 @@ export default function Route() {
   const handlePlaceImageChange = (file: FileInfo) => {
     setImageUrl(file.cdnUrl ?? "");
   };
+
 
   return (
     <section className="space-y-2">
@@ -133,9 +130,10 @@ export default function Route() {
             <Alert id={description.errorId}>{description.error}</Alert>
           </div>
 
-          <div>
+          {!UPLOADCARE_PUBLIC_KEY && <p>Terdapat masalah untuk mengunggah foto masjid</p>}
+          {UPLOADCARE_PUBLIC_KEY && <div>
             <label hidden htmlFor="imageUrl">
-              Your image:
+              Foto masjid:
             </label>
             <input
               type="hidden"
@@ -150,7 +148,7 @@ export default function Route() {
               id="file"
               onChange={handlePlaceImageChange}
             />
-          </div>
+          </div>}
 
           <div className="queue-center">
             <ButtonLoading

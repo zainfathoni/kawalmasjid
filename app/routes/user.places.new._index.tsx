@@ -5,7 +5,8 @@ import { useActionData, useLoaderData, useNavigation } from "@remix-run/react";
 import { useId, useState } from "react";
 import { badRequest, serverError } from "remix-utils";
 
-import { FileInfo, Widget as UploadcareWidget } from "@uploadcare/react-widget";
+import type { FileInfo } from "@uploadcare/react-widget";
+import { Widget as UploadcareWidget } from "@uploadcare/react-widget";
 import uploadcareTabEffects from "uploadcare-widget-tab-effects/react-en";
 
 import {
@@ -52,7 +53,16 @@ export async function action({ request }: ActionArgs) {
         description: submission.value.description,
       },
       placeImage: {
+        // FIXME: Either always require image or allow creating places without image
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         url: submission.value.imageUrl,
+      },
+      placeQRCode: {
+        // FIXME: Either always require image or allow creating places without image
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        url: submission.value.qrCodeUrl,
       },
     });
     if (!newPlace) {
@@ -72,6 +82,7 @@ export default function Route() {
 
   const { UPLOADCARE_PUBLIC_KEY } = useLoaderData<typeof loader>();
   const [imageUrl, setImageUrl] = useState("");
+  const [qrCodeUrl, setQRCodeUrl] = useState("");
 
   const id = useId();
   const [form, { name, description }] = useForm<z.infer<typeof schemaPlaceNew>>(
@@ -88,6 +99,10 @@ export default function Route() {
 
   const handleChangePlaceImage = (file: FileInfo) => {
     setImageUrl(file.cdnUrl ?? "");
+  };
+
+  const handleChangeQrCodeUrl = (file: FileInfo) => {
+    setQRCodeUrl(file.cdnUrl ?? "");
   };
 
   return (
@@ -132,33 +147,60 @@ export default function Route() {
           </div>
 
           {!UPLOADCARE_PUBLIC_KEY && (
-            <p>Terdapat masalah untuk mengunggah foto masjid</p>
+            <p>Terdapat masalah untuk fitur mengunggah gambar</p>
           )}
+
           {UPLOADCARE_PUBLIC_KEY && (
-            <div>
-              <label hidden htmlFor="imageUrl">
-                Foto masjid:
-              </label>
-              <input
-                type="hidden"
-                id="imageUrl"
-                name="imageUrl"
-                value={imageUrl}
-                readOnly
-              />
-              <label htmlFor="file">Unggah foto masjid:</label>{" "}
-              <UploadcareWidget
-                publicKey={UPLOADCARE_PUBLIC_KEY}
-                tabs="file camera url"
-                previewStep
-                effects="crop, sharp, enhance"
-                customTabs={{ preview: uploadcareTabEffects }}
-                onChange={handleChangePlaceImage}
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore
-                id="file"
-              />
-            </div>
+            <>
+              <div className="space-y-1">
+                <label hidden htmlFor="imageUrl">
+                  Foto masjid:
+                </label>
+                <input
+                  type="hidden"
+                  id="imageUrl"
+                  name="imageUrl"
+                  value={imageUrl}
+                  readOnly
+                />
+                <label htmlFor="file">Unggah foto masjid:</label>{" "}
+                <UploadcareWidget
+                  publicKey={UPLOADCARE_PUBLIC_KEY}
+                  tabs="file camera url"
+                  previewStep
+                  effects="crop, sharp, enhance"
+                  customTabs={{ preview: uploadcareTabEffects }}
+                  onChange={handleChangePlaceImage}
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-ignore
+                  id="file"
+                />
+              </div>
+              <div className="space-y-1">
+                <label hidden htmlFor="qrCodeUrl">
+                  Foto QR Code infaq:
+                </label>
+                <input
+                  type="hidden"
+                  id="qrCodeUrl"
+                  name="qrCodeUrl"
+                  value={qrCodeUrl}
+                  readOnly
+                />
+                <label htmlFor="qrCodeFile">Unggah foto QR Code infaq:</label>{" "}
+                <UploadcareWidget
+                  publicKey={UPLOADCARE_PUBLIC_KEY}
+                  tabs="file camera url"
+                  previewStep
+                  effects="crop, sharp, enhance"
+                  customTabs={{ preview: uploadcareTabEffects }}
+                  onChange={handleChangeQrCodeUrl}
+                  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                  // @ts-ignore
+                  id="qrCodeFile"
+                />
+              </div>
+            </>
           )}
 
           <div className="queue-center">

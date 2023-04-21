@@ -47,6 +47,7 @@ model User {
   places         Place[]            @relation("UserPlaces")
   verifiedPlaces Place[]            @relation("UserPlacesVerifications")
   placeImages    PlaceImage[]       @relation("UserPlaceImages")
+  placeQRCodes   PlaceQRCode[]      @relation("UserPlaceQRCodes")
 
   @@index([roleId])
   @@index([profileId])
@@ -201,6 +202,7 @@ model Place {
   userId  String
   user    User         @relation("UserPlaces", fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   images  PlaceImage[] @relation("PlaceImages")
+  qrCode  PlaceQRCode? @relation("PlaceQRCode")
   address Address?     @relation("PlaceAddress")
 
   @@index([userId])
@@ -219,6 +221,23 @@ model PlaceImage {
   placeId String
   user    User   @relation("UserPlaceImages", fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   place   Place  @relation("PlaceImages", fields: [placeId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+  @@index([userId])
+  @@index([placeId])
+}
+
+model PlaceQRCode {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  url      String
+  filePath String?
+
+  userId  String
+  placeId String @unique
+  user    User   @relation("UserPlaceQRCodes", fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  place   Place  @relation("PlaceQRCode", fields: [placeId], references: [id], onUpdate: Cascade, onDelete: Cascade)
 
   @@index([userId])
   @@index([placeId])

@@ -31,16 +31,6 @@ export function Debug({
 }) {
   const [isOpen, setIsOpen] = useState(isCollapsibleOpen);
 
-  const { ENV } = useRootLoaderData();
-
-  if (!isAlwaysShow || (ENV && ENV.NODE_ENV === "production")) {
-    return null;
-  }
-
-  if (configDev.features.debugComponent !== true) {
-    return null;
-  }
-
   return (
     <div className="my-1">
       <Collapsible open={isOpen} onOpenChange={setIsOpen} className="space-y-1">

@@ -1,4 +1,4 @@
-export function Mosque({ className = "size-md" }: { className: string }) {
+export function Mosque({ className = "size-md" }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

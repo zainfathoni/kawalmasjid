@@ -132,21 +132,22 @@ export default function Route() {
           </div>
 
           {!UPLOADCARE_PUBLIC_KEY && (
-            <p>Terdapat masalah untuk mengunggah foto masjid</p>
+            <p>Terdapat masalah untuk fitur mengunggah gambar</p>
           )}
+
           {UPLOADCARE_PUBLIC_KEY && (
             <div>
-              <label hidden htmlFor="imageUrl">
+              <Label hidden htmlFor="imageUrl">
                 Foto masjid:
-              </label>
-              <input
+              </Label>
+              <Input
                 type="hidden"
                 id="imageUrl"
                 name="imageUrl"
                 value={imageUrl}
                 readOnly
               />
-              <label htmlFor="file">Unggah foto masjid:</label>{" "}
+              <Label htmlFor="file">Unggah foto masjid:</Label>{" "}
               <UploadcareWidget
                 publicKey={UPLOADCARE_PUBLIC_KEY}
                 tabs="file camera url"

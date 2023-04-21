@@ -8,6 +8,7 @@ export const schemaPlaceNew = z.object({
     .max(5000, "Deskripsi max 5000 karakter"),
   // TODO: handle multiple images
   imageUrl: z.string().optional(),
+  qrCodeUrl: z.string().optional(),
 });
 
 export const schemaPlaceUpdate = z

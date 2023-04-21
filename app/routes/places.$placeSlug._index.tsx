@@ -134,7 +134,7 @@ export default function Route() {
           ))}
 
           <Image
-            src={`/assets/images/contoh-qr-code.png`}
+            src={place.qrCode?.url}
             alt={`QR code donasi ke ${place.name}`}
             className="h-64 max-w-sm"
           />

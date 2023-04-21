@@ -8,7 +8,6 @@ import { badRequest, forbidden } from "remix-utils";
 import {
   Alert,
   ButtonLoading,
-  Debug,
   Input,
   InputPassword,
   Label,
@@ -199,8 +198,6 @@ export default function Route() {
           </p>
         </RemixForm>
       </div>
-
-      <Debug name="form">{{ actionData, fields }}</Debug>
     </Layout>
   );
 }

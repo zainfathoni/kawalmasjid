@@ -10,6 +10,7 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
+    "postinstall": "nr prisma:generate",
     "dev": "remix dev",
     "dev-hmr": "run-p dev-hmr:*",
     "dev-hmr:remix": "cross-env NODE_ENV=development USE_HMR=true remix dev",

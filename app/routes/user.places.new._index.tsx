@@ -5,7 +5,8 @@ import { useActionData, useLoaderData, useNavigation } from "@remix-run/react";
 import { useId, useState } from "react";
 import { badRequest, serverError } from "remix-utils";
 
-import { FileInfo, Widget as UploadcareWidget } from "@uploadcare/react-widget";
+import type { FileInfo } from "@uploadcare/react-widget";
+import { Widget as UploadcareWidget } from "@uploadcare/react-widget";
 import uploadcareTabEffects from "uploadcare-widget-tab-effects/react-en";
 
 import {

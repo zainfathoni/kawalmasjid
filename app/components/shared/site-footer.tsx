@@ -25,7 +25,7 @@ export function SiteFooter({ noThemeToggle }: Props) {
           </div>
         </div>
 
-        <div className="flex w-full justify-center gap-1 sm:w-min sm:gap-2 sm:justify-end">
+        <div className="flex w-full justify-center gap-1 sm:w-min sm:justify-end sm:gap-2">
           <ButtonIconAnchor
             href={configSite?.links.github}
             variant="ghost"

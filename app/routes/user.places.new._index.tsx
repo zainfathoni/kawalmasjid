@@ -147,8 +147,9 @@ export default function Route() {
           </div>
 
           {!UPLOADCARE_PUBLIC_KEY && (
-            <p>Terdapat masalah untuk mengunggah foto masjid</p>
+            <p>Terdapat masalah untuk fitur mengunggah gambar</p>
           )}
+
           {UPLOADCARE_PUBLIC_KEY && (
             <>
               <div className="space-y-1">

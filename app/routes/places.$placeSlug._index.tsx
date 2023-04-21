@@ -129,7 +129,7 @@ export default function Route() {
               src={img.url}
               key={img.id}
               alt={place.name}
-              className="h-64 max-w-sm"
+              className="h-64 max-w-sm object-cover"
             />
           ))}
 

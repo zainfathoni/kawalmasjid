@@ -124,8 +124,8 @@ export default function Route() {
     >
       <div className="stack-lg my-8">
         <aside className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row md:justify-start">
-          {place.images?.length > 0 && <>
-            {place.images.map((img) => (
+          {place?.images?.length > 0 && <>
+            {place?.images?.map((img) => (
               <Image
                 src={img.url}
                 key={img.id}
@@ -135,8 +135,8 @@ export default function Route() {
             ))}
           </>}
 
-          {place.qrCode?.url && <Image
-            src={place.qrCode?.url}
+          {place?.qrCode?.url && <Image
+            src={place?.qrCode?.url}
             alt={`QR code donasi ke ${place.name}`}
             className="h-64 max-w-sm"
           />}

@@ -5,10 +5,12 @@ const isDevelopment = process.env.NODE_ENV === "development";
 const isUsingHMR = Boolean(process.env.USE_HMR) || false;
 
 // to show environent condition
-console.info({
-  message: `🕌 Aplikasi Kawal Masjid sedang berjalan`,
-  NODE_ENV: process.env.NODE_ENV,
-});
+if (isDevelopment) {
+  console.info({
+    message: `🕌 Aplikasi Kawal Masjid sedang berjalan`,
+    NODE_ENV: process.env.NODE_ENV,
+  });
+}
 
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {

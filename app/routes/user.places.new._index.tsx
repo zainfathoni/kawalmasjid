@@ -153,17 +153,17 @@ export default function Route() {
           {UPLOADCARE_PUBLIC_KEY && (
             <>
               <div className="space-y-1">
-                <label hidden htmlFor="imageUrl">
+                <Label hidden htmlFor="imageUrl">
                   Foto masjid:
-                </label>
-                <input
+                </Label>
+                <Input
                   type="hidden"
                   id="imageUrl"
                   name="imageUrl"
                   value={imageUrl}
                   readOnly
                 />
-                <label htmlFor="file">Unggah foto masjid:</label>{" "}
+                <Label htmlFor="file">Unggah foto masjid:</Label>{" "}
                 <UploadcareWidget
                   publicKey={UPLOADCARE_PUBLIC_KEY}
                   tabs="file camera url"
@@ -177,17 +177,17 @@ export default function Route() {
                 />
               </div>
               <div className="space-y-1">
-                <label hidden htmlFor="qrCodeUrl">
+                <Label hidden htmlFor="qrCodeUrl">
                   Foto QR Code infaq:
-                </label>
-                <input
+                </Label>
+                <Input
                   type="hidden"
                   id="qrCodeUrl"
                   name="qrCodeUrl"
                   value={qrCodeUrl}
                   readOnly
                 />
-                <label htmlFor="qrCodeFile">Unggah foto QR Code infaq:</label>{" "}
+                <Label htmlFor="qrCodeFile">Unggah foto QR Code infaq:</Label>{" "}
                 <UploadcareWidget
                   publicKey={UPLOADCARE_PUBLIC_KEY}
                   tabs="file camera url"

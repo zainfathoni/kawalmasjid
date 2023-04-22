@@ -19,7 +19,7 @@ import { cn } from "~/utils";
 export function Debug({
   name = "unknown",
   isCollapsibleOpen = false,
-  isAlwaysShow,
+  isAlwaysShow = false,
   className,
   children,
 }: {
@@ -30,6 +30,16 @@ export function Debug({
   children: string | any | unknown | null | undefined | React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(isCollapsibleOpen);
+
+  const { ENV } = useRootLoaderData();
+
+  if (!isAlwaysShow && ENV && ENV.NODE_ENV === "production") {
+    return null;
+  }
+
+  if (configDev.features.debugComponent !== true) {
+    return null;
+  }
 
   return (
     <div className="my-1">

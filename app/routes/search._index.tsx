@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import { AvatarAuto, Layout, PageHeader, RemixLink } from "~/components";
+import { AvatarAuto, Image, Layout, PageHeader, RemixLink } from "~/components";
 import { prisma } from "~/libs";
 import { model } from "~/models";
 import {
@@ -76,7 +76,7 @@ export default function Route() {
                       to={`/places/${place.slug}`}
                       className="card-sm hover:card-hover flex gap-4 p-4"
                     >
-                      <img
+                      <Image
                         src={
                           place.qrCode?.url ??
                           place.images[0].url ??

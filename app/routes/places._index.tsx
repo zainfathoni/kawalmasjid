@@ -4,6 +4,7 @@ import { useLoaderData } from "@remix-run/react";
 import {
   AvatarAuto,
   ButtonLink,
+  Image,
   Layout,
   PageHeader,
   RemixLink,
@@ -71,7 +72,7 @@ export default function Route() {
                   to={`/places/${place.slug}`}
                   className="card hover:card-hover flex h-full gap-4"
                 >
-                  <img
+                  <Image
                     src={
                       place.qrCode?.url ??
                       place.images[0].url ??

@@ -74,14 +74,15 @@ export default function Route() {
                   <img
                     src={
                       place.qrCode?.url ??
+                      place.images[0].url ??
                       "assets/images/qr-code-placeholder.jpeg"
                     }
                     alt={
                       place.qrCode?.url
                         ? `QR code ${place.name}`
-                        : "Belum ada QR code"
+                        : `Belum ada QR code ${place.name}`
                     }
-                    className="aspect-square h-36 w-36 rounded-md"
+                    className="aspect-square h-36 w-36 rounded-md object-cover"
                     width={36}
                     height={36}
                   />

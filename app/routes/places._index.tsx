@@ -4,6 +4,7 @@ import { useLoaderData } from "@remix-run/react";
 import {
   AvatarAuto,
   ButtonLink,
+  Image,
   Layout,
   PageHeader,
   RemixLink,
@@ -69,15 +70,34 @@ export default function Route() {
                 <RemixLink
                   prefetch="intent"
                   to={`/places/${place.slug}`}
-                  className="card hover:card-hover flex h-full flex-col space-y-0"
+                  className="card hover:card-hover flex h-full gap-4"
                 >
-                  <h3>{place.name}</h3>
-                  <p className="dim">{truncateText(place.description, 120)}</p>
-                  <div className="queue-center dim">
-                    <AvatarAuto user={place.user} className="size-md" />
-                    <b>{place.user.name}</b>
-                    <span>•</span>
-                    <span>{formatRelativeTime(place.updatedAt)}</span>
+                  <Image
+                    src={
+                      place.qrCode?.url ??
+                      place.images[0].url ??
+                      "assets/images/qr-code-placeholder.jpeg"
+                    }
+                    alt={
+                      place.qrCode?.url
+                        ? `QR code ${place.name}`
+                        : `Belum ada QR code ${place.name}`
+                    }
+                    className="aspect-square h-36 w-36 rounded-md object-cover"
+                    width={36}
+                    height={36}
+                  />
+                  <div className="flex flex-col space-y-0">
+                    <h3>{place.name}</h3>
+                    <p className="dim">
+                      {truncateText(place.description, 120)}
+                    </p>
+                    <div className="queue-center dim">
+                      <AvatarAuto user={place.user} className="size-md" />
+                      <b>{place.user.name}</b>
+                      <span>•</span>
+                      <span>{formatRelativeTime(place.updatedAt)}</span>
+                    </div>
                   </div>
                 </RemixLink>
               </li>

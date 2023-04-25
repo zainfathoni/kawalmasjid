@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import { AvatarAuto, Layout, PageHeader, RemixLink } from "~/components";
+import { AvatarAuto, Image, Layout, PageHeader, RemixLink } from "~/components";
 import { prisma } from "~/libs";
 import { model } from "~/models";
 import {
@@ -74,15 +74,32 @@ export default function Route() {
                     <RemixLink
                       prefetch="intent"
                       to={`/places/${place.slug}`}
-                      className="card-sm hover:card-hover"
+                      className="card-sm hover:card-hover flex gap-4 p-4"
                     >
-                      <h4>{place.name}</h4>
-                      <p>{truncateText(place.description)}</p>
-                      <div className="queue-center dim">
-                        <AvatarAuto user={place.user} className="size-md" />
-                        <b>{place.user.name}</b>
-                        <span>•</span>
-                        <span>{formatRelativeTime(place.updatedAt)}</span>
+                      <Image
+                        src={
+                          place.qrCode?.url ??
+                          place.images[0].url ??
+                          "assets/images/qr-code-placeholder.jpeg"
+                        }
+                        alt={
+                          place.qrCode?.url
+                            ? `QR code ${place.name}`
+                            : `Belum ada QR code ${place.name}`
+                        }
+                        className="aspect-square h-36 w-36 rounded-md object-cover"
+                        width={36}
+                        height={36}
+                      />
+                      <div className="flex flex-col space-y-0">
+                        <h4>{place.name}</h4>
+                        <p>{truncateText(place.description)}</p>
+                        <div className="queue-center dim">
+                          <AvatarAuto user={place.user} className="size-md" />
+                          <b>{place.user.name}</b>
+                          <span>•</span>
+                          <span>{formatRelativeTime(place.updatedAt)}</span>
+                        </div>
                       </div>
                     </RemixLink>
                   </li>

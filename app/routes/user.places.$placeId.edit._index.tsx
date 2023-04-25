@@ -9,6 +9,7 @@ import {
   Button,
   ButtonLink,
   ButtonLoading,
+  Image,
   Input,
   Label,
   RemixForm,
@@ -130,6 +131,31 @@ export default function Route() {
             />
             <Alert id={description.errorId}>{description.error}</Alert>
           </div>
+
+          <aside className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row md:justify-start">
+            {/* TODO: show delete & add buttons to delete and add images */}
+            {place?.images?.length > 0 && (
+              <>
+                {place?.images?.map((img) => (
+                  <Image
+                    src={img.url}
+                    key={img.id}
+                    alt={place.name}
+                    className="h-64 max-w-sm object-cover"
+                  />
+                ))}
+              </>
+            )}
+
+            {/* TODO: show delete & add buttons to delete and add QR code image */}
+            {place?.qrCode?.url && (
+              <Image
+                src={place?.qrCode?.url}
+                alt={`QR code donasi ke ${place.name}`}
+                className="h-64 max-w-sm"
+              />
+            )}
+          </aside>
 
           <div className="queue-center">
             <ButtonLoading

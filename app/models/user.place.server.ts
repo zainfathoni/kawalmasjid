@@ -20,7 +20,11 @@ export const query = {
   getById({ id, userId }: Pick<Place, "id" | "userId">) {
     return prisma.place.findFirst({
       where: { id, userId },
-      include: { user: { select: model.user.fields.public } },
+      include: {
+        user: { select: model.user.fields.public },
+        images: true,
+        qrCode: true,
+      },
     });
   },
 };

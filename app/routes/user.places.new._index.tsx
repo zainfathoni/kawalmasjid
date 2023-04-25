@@ -146,11 +146,9 @@ export default function Route() {
             <Alert id={description.errorId}>{description.error}</Alert>
           </div>
 
-          {!UPLOADCARE_PUBLIC_KEY && (
+          {!UPLOADCARE_PUBLIC_KEY ? (
             <p>Terdapat masalah untuk fitur mengunggah gambar</p>
-          )}
-
-          {UPLOADCARE_PUBLIC_KEY && (
+          ) : (
             <>
               <div className="space-y-1">
                 <label hidden htmlFor="imageUrl">

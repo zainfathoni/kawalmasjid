@@ -79,7 +79,7 @@ export default function Route() {
                       <Image
                         src={
                           place.qrCode?.url ??
-                          place.images[0].url ??
+                          place.images[0]?.url ??
                           "assets/images/qr-code-placeholder.jpeg"
                         }
                         alt={

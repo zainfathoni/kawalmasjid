@@ -126,24 +126,26 @@ export default function Route() {
         <aside className="flex flex-col flex-wrap items-center justify-center gap-4 md:flex-row md:justify-start">
           {place?.images?.length > 0 && (
             <>
-              {place?.images?.map((img) => (
-                <Image
-                  src={img.url}
-                  key={img.id}
-                  alt={place.name}
-                  className="h-64 max-w-sm object-cover"
-                />
-              ))}
+              {place?.images?.map((img) =>
+                img?.url?.length ? (
+                  <Image
+                    src={img.url}
+                    key={img.id}
+                    alt={place.name}
+                    className="h-64 max-w-sm object-cover"
+                  />
+                ) : null
+              )}
             </>
           )}
 
-          {place?.qrCode?.url && (
+          {place?.qrCode?.url?.length ? (
             <Image
               src={place?.qrCode?.url}
               alt={`QR code donasi ke ${place.name}`}
               className="h-64 max-w-sm"
             />
-          )}
+          ) : null}
         </aside>
 
         <article className="prose-config whitespace-pre-wrap">

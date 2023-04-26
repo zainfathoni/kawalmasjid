@@ -69,6 +69,14 @@ export default function Route() {
             <span>Masjid</span>
             <ul className="space-y-1">
               {places.map((place) => {
+                const qrCodeUrl = place.qrCode?.url;
+                const firstImageUrl = place.images[0]?.url;
+                let src = "assets/images/qr-code-placeholder.jpeg";
+                if (qrCodeUrl?.length) {
+                  src = qrCodeUrl;
+                } else if (firstImageUrl?.length) {
+                  src = firstImageUrl;
+                }
                 return (
                   <li key={place.id}>
                     <RemixLink
@@ -77,11 +85,7 @@ export default function Route() {
                       className="card-sm hover:card-hover flex gap-4 p-4"
                     >
                       <Image
-                        src={
-                          place.qrCode?.url ??
-                          place.images[0]?.url ??
-                          "assets/images/qr-code-placeholder.jpeg"
-                        }
+                        src={src}
                         alt={
                           place.qrCode?.url
                             ? `QR code ${place.name}`

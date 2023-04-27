@@ -13,6 +13,7 @@ export const query = {
       include: {
         user: { select: model.user.fields.public },
         images: true,
+        qrCode: true,
       },
       orderBy: { updatedAt: "desc" },
 
@@ -77,6 +78,7 @@ export const query = {
       },
       include: {
         images: true,
+        qrCode: true,
         user: { select: model.user.fields.public },
       },
       orderBy: [{ name: "asc" }],

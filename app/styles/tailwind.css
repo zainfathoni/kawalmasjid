@@ -85,10 +85,10 @@
   .button:focus {
     @apply outline-none ring-2 ring-brand-600 ring-offset-2 dark:ring-brand-400 dark:ring-offset-brand-900;
   }
-  .button-variant-primary {
+  .button-variant-default {
     @apply border-2 border-brand-800 bg-brand-600 text-white hover:bg-brand-700 dark:border-brand-400;
   }
-  .button-variant-primary:focus {
+  .button-variant-default:focus {
     @apply bg-brand-600;
   }
   .link {
@@ -232,8 +232,8 @@
 
 /* Uploadcare styles need to be outside of layers */
 .uploadcare--widget__button {
-  @apply button button-variant-primary;
+  @apply button button-variant-default;
 }
 .uploadcare--button_primary {
-  @apply button button-variant-primary;
+  @apply button button-variant-default;
 }

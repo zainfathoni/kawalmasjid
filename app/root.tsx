@@ -228,7 +228,7 @@ export function ErrorBoundary() {
             <p>
               Here's the error information that can be informed to Kawal Masjid.
             </p>
-            <Debug name="error.data" isAlwaysShow>
+            <Debug name="error.data" isAlwaysShow isCollapsibleOpen>
               {error.data}
             </Debug>
           </div>
@@ -253,12 +253,12 @@ export function ErrorBoundary() {
             </p>
 
             <p>{error.message}</p>
-            <Debug name="error" isAlwaysShow>
+            <Debug name="error" isAlwaysShow isCollapsibleOpen>
               {error}
             </Debug>
 
             <p>The stack trace is:</p>
-            <Debug name="error.stack" isAlwaysShow>
+            <Debug name="error.stack" isAlwaysShow isCollapsibleOpen>
               {error.stack}
             </Debug>
           </div>

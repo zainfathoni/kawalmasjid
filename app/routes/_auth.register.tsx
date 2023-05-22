@@ -153,7 +153,7 @@ export default function Route() {
                   {username.error}
                 </Alert>
               )}
-              <p className="text-xs text-surface-500">
+              <p className="text-xs text-surface-500 dark:text-surface-300">
                 4-20 karakter (huruf, angka, titik, underscore)
               </p>
             </div>
@@ -187,7 +187,9 @@ export default function Route() {
                   {password.error}
                 </Alert>
               )}
-              <p className="text-xs text-surface-500">8 karakter atau lebih</p>
+              <p className="text-xs text-surface-500 dark:text-surface-300">
+                8 karakter atau lebih
+              </p>
             </div>
 
             <input type="hidden" name="redirectTo" value={redirectTo} />

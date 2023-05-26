@@ -163,7 +163,9 @@ export default function Route() {
                   {password.error}
                 </Alert>
               )}
-              <p className="text-xs text-surface-500">Minimal 8 karakter</p>
+              <p className="text-xs text-surface-500 dark:text-surface-300">
+                Minimal 8 karakter
+              </p>
             </div>
 
             {/* TODO: Implement remember checkbox */}
